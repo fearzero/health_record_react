@@ -7,13 +7,15 @@ import Page3 from './Page3';
 import Page4 from './Page4';
 import Login from './login/login';
 import register from './register/register';
+import navber from './info_user/navbar'
 class App extends React.Component {
     render(){
         return(
             <Router >
                 <div style={{margin:'10px'}}>
                     <Route path="/home" component={Home} />
-                    <Route path="/home/Page1" component={Page1} />
+                    <Route path="/home/navbar" component={navber} />
+                    <Route path="/home/navbar/Page1" component={Page1} />
                     <Route path="/home/Page2" component={Page2} />
                     <Route path="/home/Page3" component={Page3} />
                     <Route path="/home/Page4" component={Page4} />

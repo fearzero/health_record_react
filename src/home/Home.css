@@ -1,15 +1,33 @@
 #home_style1{
     width: 1500px;
-    background-color: greenyellow;
+
 }
 #home_style2{
     width: 1500px;
     height: 100px;
-    background-color: yellow;
+}
+#top_img1{
+    width: 1500px;
+    height: 100px;
 }
 #home_style3{
     width: 208px;
     height: 600px;
     float: left;
-    background-color: red;
+}
+#menu1{
+   margin-top: 0;
+    background-color: gainsboro;
+
+}
+#menu2{
+    background-color: gainsboro;
+    width: 100px;
+}
+#item1{
+    float: left;
+    width: 200px;
+}
+#item2{
+    width: 200px;
 }

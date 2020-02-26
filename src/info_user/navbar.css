@@ -1,0 +1,28 @@
+#nav1_style1{
+    width: 208px;
+    height: 600px;
+    float: left;
+}
+nav1_style2{
+    width: 208px;
+    height: 200px;
+    float: left;
+    background-color: red;
+}
+#nav1_menu1{
+    background-color: gainsboro;
+    width: 200px;
+    margin-left: 0;
+    margin-top: 50px;
+}
+#nav1_item{
+    width: 200px;
+    height: 75px;
+}
+
+#nav1_img1{
+    width: 200px;
+    height: 328.6px;
+
+
+}
