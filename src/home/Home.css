@@ -1,0 +1,15 @@
+#home_style1{
+    width: 1500px;
+    background-color: greenyellow;
+}
+#home_style2{
+    width: 1500px;
+    height: 100px;
+    background-color: yellow;
+}
+#home_style3{
+    width: 208px;
+    height: 600px;
+    float: left;
+    background-color: red;
+}

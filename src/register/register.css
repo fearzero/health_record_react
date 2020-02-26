@@ -1,0 +1,22 @@
+#register_style1{
+    width: 1500px;
+    height: 700px;
+
+    background-color:darkgrey;
+}
+#register_style2{
+    width: 1500px;
+    height: 100px;
+    background-color:greenyellow;
+}
+#register_style3{
+    width: 1500px;
+    background-color:yellow;
+}
+#register_style4{
+    width:450px;
+    height: 490px;
+    margin-left: 525px;
+    background-color:red;
+}
+
