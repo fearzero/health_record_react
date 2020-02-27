@@ -22,9 +22,18 @@ class Home extends React.Component{
                                     as={Link}
                                     to="/home/navbar1/Page1"
                                 >录入</Dropdown.Item>
-                                <Dropdown.Item>查询</Dropdown.Item>
-                                <Dropdown.Item>精准查询</Dropdown.Item>
-                                <Dropdown.Item>模糊查询</Dropdown.Item>
+                                <Dropdown.Item
+                                    as={Link}
+                                    to="/home/navbar1/selectPage1"
+                                >查询</Dropdown.Item>
+                                <Dropdown.Item
+                                    as={Link}
+                                    to="/home/navbar1/selectPage1"
+                                >精准查询</Dropdown.Item>
+                                <Dropdown.Item
+                                    as={Link}
+                                    to="/home/navbar1/selectPage1"
+                                >模糊查询</Dropdown.Item>
                                 <Dropdown.Item
                                     as={Link}
                                     to="/home/navbar1/Page4"
@@ -38,9 +47,18 @@ class Home extends React.Component{
                                 as={Link}
                                 to="/home/navbar2/Page2"
                             >录入</Dropdown.Item>
-                            <Dropdown.Item>查询</Dropdown.Item>
-                            <Dropdown.Item>精准查询</Dropdown.Item>
-                            <Dropdown.Item>模糊查询</Dropdown.Item>
+                            <Dropdown.Item
+                                as={Link}
+                                to="/home/navbar2/selectPage2"
+                            >查询</Dropdown.Item>
+                            <Dropdown.Item
+                                as={Link}
+                                to="/home/navbar2/selectPage2"
+                            >精准查询</Dropdown.Item>
+                            <Dropdown.Item
+                                as={Link}
+                                to="/home/navbar2/selectPage2"
+                            >模糊查询</Dropdown.Item>
                             <Dropdown.Item
                                 as={Link}
                                 to="/home/navbar2/Page5"
@@ -54,9 +72,18 @@ class Home extends React.Component{
                                 as={Link}
                                 to="/home/navbar3/Page3"
                             >录入</Dropdown.Item>
-                            <Dropdown.Item>查询</Dropdown.Item>
-                            <Dropdown.Item>精准查询</Dropdown.Item>
-                            <Dropdown.Item>模糊查询</Dropdown.Item>
+                            <Dropdown.Item
+                                as={Link}
+                                to="/home/navbar3/selectPage3"
+                            >查询</Dropdown.Item>
+                            <Dropdown.Item
+                                as={Link}
+                                to="/home/navbar3/selectPage3"
+                            >精准查询</Dropdown.Item>
+                            <Dropdown.Item
+                                as={Link}
+                                to="/home/navbar3/selectPage3"
+                            >模糊查询</Dropdown.Item>
                             <Dropdown.Item
                                 as={Link}
                                 to="/home/navbar3/Page6"
@@ -91,7 +118,7 @@ class Home extends React.Component{
                         </Menu.Item>
                     </Menu.Menu>
                 </Menu>
-
+                <div id='home1'></div>
             </div>
         );
     }

@@ -13,6 +13,9 @@ import navber1 from './navbar/navbar1'
 import navber2 from './navbar/navbar2'
 import navber3 from './navbar/navbar3'
 import webindex from './webindex'
+import selectPage1 from "./selectpage/selectPage1";
+import selectPage2 from "./selectpage/selectPage2";
+import selectPage3 from "./selectpage/selectPage3";
 class App extends React.Component {
     render(){
         return(
@@ -28,9 +31,13 @@ class App extends React.Component {
                     <Route path="/home/navbar1/Page4" component={Page4} />
                     <Route path="/home/navbar2/Page5" component={Page5} />
                     <Route path="/home/navbar3/Page6" component={Page6} />
+                    <Route path="/home/navbar1/selectPage1" component={selectPage1} />
+                    <Route path="/home/navbar2/selectPage2" component={selectPage2} />
+                    <Route path="/home/navbar3/selectPage3" component={selectPage3} />
                     <Route exact path="/" component={webindex} />
                     <Route path="/register" component={register} />
                     <Route path="/login" component={Login} />
+
                 </div>
             </Router>
 

@@ -1,0 +1,19 @@
+#select_page1{
+    width: 1000px;
+    height: 650px;
+    margin-left: 400px;
+    float: left;
+}
+#select_page2{
+    width:1000px;
+    height: 650px;
+    text-align: center;
+    opacity:0%;
+}
+.select_input1{
+    width: 100px;
+    margin-bottom: 20px;
+
+    float: left;
+
+}

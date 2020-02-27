@@ -27,7 +27,7 @@ class navbar1 extends React.Component {
                         active={activeItem === '查询'}
                         onClick={this.handleItemClick}
                         as={Link}
-                        to="/home/navbar/"
+                        to="/home/navbar3/selectPage3"
                     />
                         <Menu.Item
                             id='av1_item1'
@@ -35,7 +35,7 @@ class navbar1 extends React.Component {
                             active={activeItem === '精准查询'}
                             onClick={this.handleItemClick}
                             as={Link}
-                            to="/home/navbar/"
+                            to="/home/navbar3/selectPage3"
                         />
                         <Menu.Item
                             id='av1_item1'
@@ -43,7 +43,7 @@ class navbar1 extends React.Component {
                             active={activeItem === '模糊查询'}
                             onClick={this.handleItemClick}
                             as={Link}
-                            to="/home/navbar/"
+                            to="/home/navbar3/selectPage3"
                         />
                         <Menu.Item
                             id='av1_item1'
