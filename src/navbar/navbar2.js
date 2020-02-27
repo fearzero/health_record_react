@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Menu, } from 'semantic-ui-react';
 import Img from './sim_img1.jpg'
 require('./navbar.css')
-class navbar extends React.Component {
+class navbar1 extends React.Component {
     state = { activeItem: 'bio' }
     handleItemClick = (e, { name }) => this.setState({ activeItem: name })
     render() {
@@ -19,7 +19,7 @@ class navbar extends React.Component {
                             active={activeItem === '录入'}
                             onClick={this.handleItemClick}
                             as={Link}
-                            to="/home/navbar/Page1"
+                            to="/home/navbar2/Page2"
                         />
                         <Menu.Item
                             id='av1_item1'
@@ -51,7 +51,7 @@ class navbar extends React.Component {
                             active={activeItem === '修改'}
                             onClick={this.handleItemClick}
                             as={Link}
-                            to="/home/navbar/"
+                            to="/home/navbar2/Page5"
                         />
                         <Menu.Item
                             id='av1_item1'
@@ -70,4 +70,4 @@ class navbar extends React.Component {
         );
     }
 }
-export default navbar;
+export default navbar1;

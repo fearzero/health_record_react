@@ -4,10 +4,7 @@ import { Menu, Dropdown } from 'semantic-ui-react';
 import Img from './top1.jpg'
 require('./Home.css')
 class Home extends React.Component{
-    state = { activeItem: 'bio' }
-    handleItemClick = (e, { name }) => this.setState({ activeItem: name })
     render(){
-        const { activeItem } = this.state
 
         return(
             <div id='home_style1'>
@@ -19,36 +16,67 @@ class Home extends React.Component{
                         id='item1'
                         name='欢迎'
                     />
-                    <Menu.Item
-                        name='人员档案管理'
-                        active={activeItem === '人员档案管理'}
-                        onClick={this.handleItemClick}
-                        as={Link}
-                        to="/home/navbar/"
-                    />
-                    <Menu.Item
-                        name='体检信息管理'
-                        active={activeItem === '体检信息管理'}
-                        onClick={this.handleItemClick}
-                        as={Link}
-                        to="/home/navbar/"
-                    />
-                    <Menu.Item
-                        name='疾病信息管理'
-                        active={activeItem === '疾病信息管理'}
-                        onClick={this.handleItemClick}
-                        as={Link}
-                        to="/home/navbar/"
-                    />
-                    <Menu.Item
-                        name='系统问题反馈'
-                        active={activeItem === '系统问题反馈'}
-                        onClick={this.handleItemClick}
-                        as={Link}
-                        to="/home/navbar/"
-                    />
-
-
+                        <Dropdown item text='人员档案管理' pointing simple>
+                            <Dropdown.Menu>
+                                <Dropdown.Item
+                                    as={Link}
+                                    to="/home/navbar1/Page1"
+                                >录入</Dropdown.Item>
+                                <Dropdown.Item>查询</Dropdown.Item>
+                                <Dropdown.Item>精准查询</Dropdown.Item>
+                                <Dropdown.Item>模糊查询</Dropdown.Item>
+                                <Dropdown.Item
+                                    as={Link}
+                                    to="/home/navbar1/Page4"
+                                >修改</Dropdown.Item>
+                                <Dropdown.Item>删除</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+                    <Dropdown item text='体检信息管理' pointing simple>
+                        <Dropdown.Menu>
+                            <Dropdown.Item
+                                as={Link}
+                                to="/home/navbar2/Page2"
+                            >录入</Dropdown.Item>
+                            <Dropdown.Item>查询</Dropdown.Item>
+                            <Dropdown.Item>精准查询</Dropdown.Item>
+                            <Dropdown.Item>模糊查询</Dropdown.Item>
+                            <Dropdown.Item
+                                as={Link}
+                                to="/home/navbar2/Page5"
+                            >修改</Dropdown.Item>
+                            <Dropdown.Item>删除</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                    <Dropdown item text='疾病信息管理' pointing simple>
+                        <Dropdown.Menu>
+                            <Dropdown.Item
+                                as={Link}
+                                to="/home/navbar3/Page3"
+                            >录入</Dropdown.Item>
+                            <Dropdown.Item>查询</Dropdown.Item>
+                            <Dropdown.Item>精准查询</Dropdown.Item>
+                            <Dropdown.Item>模糊查询</Dropdown.Item>
+                            <Dropdown.Item
+                                as={Link}
+                                to="/home/navbar3/Page6"
+                            >修改</Dropdown.Item>
+                            <Dropdown.Item>删除</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                    <Dropdown item text='系统问题反馈' pointing simple>
+                        <Dropdown.Menu>
+                            <Dropdown.Item
+                                as={Link}
+                                to="/home/navbar2/Page2"
+                            >录入</Dropdown.Item>
+                            <Dropdown.Item>查询</Dropdown.Item>
+                            <Dropdown.Item>精准查询</Dropdown.Item>
+                            <Dropdown.Item>模糊查询</Dropdown.Item>
+                            <Dropdown.Item>修改</Dropdown.Item>
+                            <Dropdown.Item>删除</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
                     <Menu.Menu position={'right'}>
                         <Dropdown item icon='user' simple>
                         <Dropdown.Menu>

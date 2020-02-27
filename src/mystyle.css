@@ -5,4 +5,37 @@
     float: left;
     font-size:24px;
     text-align:center
+
+
+}
+#web1{
+    margin: 0px;
+    width: 1520px;
+    height: 800px;
+    background-image: url("web.jpg");
+    background-size: 1517px,800px;
+    float: left;
+ }
+#web2{
+   margin-left: 375px;
+    margin-top: 200px;
+    width: 750px;
+    height: 400px;
+    float: left;
+    text-align: center;
+}
+#h1{
+    font-size: 100px;
+    font-weight:bold;
+    color:white;
+}
+#h2{
+    font-size: 40px;
+    font-weight:bold;
+    color:white;
+}
+#next{
+    margin-top: 130px;
+    width: 150px;
+    height: 40px;
 }
