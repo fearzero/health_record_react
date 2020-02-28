@@ -8,6 +8,7 @@ class a_selectPage1 extends React.Component{
             <div id='in_page1'>
                 <div id='select_page1'>
                     <Segment id='select_page2'>
+                        <h1>人员档案</h1>
                         <h3>精准查询</h3>
                         <Input id='user_id' className='select_input1' placeholder='体检用户编码'/>&nbsp;&nbsp;&nbsp;
                         <Button primary content='查询' style={{marginBottom:'10px' ,marginLeft:'20px'}}/>

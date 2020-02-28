@@ -8,6 +8,7 @@ class selectPage3 extends React.Component{
             <div id='in_page1'>
                 <div id='select_page1'>
                     <Segment id='select_page2'>
+                        <h1>疾病信息</h1>
                         <h3>按条件查询</h3>
                         <Input id='user_name' className='select_input1' placeholder='姓名'/>&nbsp;&nbsp;&nbsp;
                         <Input id='count' className='select_input1' placeholder='体检批次'/>&nbsp;&nbsp;&nbsp;

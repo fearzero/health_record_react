@@ -1,6 +1,8 @@
 #style1{
-    width: 1500px;
-    height: 700px;
+    width: 1600px;
+    height: 720px;
+    background-image: url("lo1.png");
+    background-size: 1600px,730px;
 }
 #style2{
     width: 1500px;

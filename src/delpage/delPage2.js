@@ -7,7 +7,8 @@ class delPage2 extends React.Component{
             <div id='in_page1'>
                 <div id='in_page2'>
                     <Segment id='alter_page' style={{marginTop:'150px'}}>
-                        <h3>用户信息删除 </h3>
+                        <h1>体检信息</h1>
+
                         <h5>指定删除信息的用户</h5>
                         <Input id='user_id' className='page1_input1' placeholder='体检用户编码'/><br/>
                         <Button

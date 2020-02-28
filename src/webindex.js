@@ -11,7 +11,6 @@ class webindex extends React.Component {
                 <div id='web1'>
                     <div id='web2'>
                         <h1 id='h1'>welcome</h1>
-                        <h2 id='h2'>按时身体检查，享受健康生活</h2>
                         <Button
                             primary id='next'
                             icon labelPosition='right'

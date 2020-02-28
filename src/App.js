@@ -8,7 +8,7 @@ import Page4 from './alterpage/Page4';
 import Page5 from './alterpage/Page5';
 import Page6 from './alterpage/Page6';
 import Login from './login/login';
-import register from './register/register';
+import register from './login/register';
 import navber from './navbar/navbar'
 import navber1 from './navbar/navbar1'
 import navber2 from './navbar/navbar2'
