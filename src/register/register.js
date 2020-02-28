@@ -27,7 +27,12 @@ class register extends React.Component {
                         <Input id='phone_num' placeholder='手机号' style={{marginBottom:'10px'}}/><br/>
                         <Input id='address' placeholder='居住地址' style={{marginBottom:'10px'}}/><br/>
                         <Link to="/home">
-                            <Button primary content='注册' style={{marginBottom:'10px'}}/>
+                            <Button
+                                primary content='注册'
+                                style={{marginBottom:'10px'}}
+                                as={Link}
+                                to="/home/navbar1/mess1"
+                            />
                         </Link>
                         <Button content='重置' style={{marginLeft:'20px'}}/>
                     </Segment>

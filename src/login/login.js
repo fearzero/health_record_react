@@ -20,7 +20,7 @@ class Login extends React.Component {
                     <Input id='user' placeholder='用户名' style={{marginBottom:'10px'}}/><br/>
                     <Input id='password' type='password' placeholder='密码' style={{marginBottom:'10px'}}/>
                     <br/>
-                    <Link to="/home">
+                    <Link to="/home/navbar/welcome">
                         <Button primary content='登录' style={{marginBottom:'10px'}}/>
                     </Link >
                     <Link to="/register">

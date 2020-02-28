@@ -24,10 +24,6 @@ class navbar1 extends React.Component {
                         <Menu.Item
                             id='av1_item1'
                         name='查询'
-                        active={activeItem === '查询'}
-                        onClick={this.handleItemClick}
-                        as={Link}
-                        to="/home/navbar2/selectPage2"
                     />
                         <Menu.Item
                             id='av1_item1'
@@ -35,7 +31,7 @@ class navbar1 extends React.Component {
                             active={activeItem === '精准查询'}
                             onClick={this.handleItemClick}
                             as={Link}
-                            to="/home/navbar2/selectPage2"
+                            to="/home/navbar2/a_selectPage2"
                         />
                         <Menu.Item
                             id='av1_item1'
@@ -59,7 +55,7 @@ class navbar1 extends React.Component {
                             active={activeItem === '删除'}
                             onClick={this.handleItemClick}
                             as={Link}
-                            to="/home/navbar/"
+                            to="/home/navbar2/delPage2"
                         />
                     </Menu>
                     <div id='nav1_style2'>

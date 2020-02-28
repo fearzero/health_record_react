@@ -1,5 +1,6 @@
 import React from 'react';
 import {Button, Input, Segment} from "semantic-ui-react";
+import {Link} from "react-router-dom";
 require('./Page1.css')
 
 class Page2 extends React.Component{
@@ -28,7 +29,12 @@ class Page2 extends React.Component{
                         <Input id='d_blood_pressure' className='page1_input1'placeholder='舒张压'
                                label={{ basic: true, content: 'mmHg' }}
                                labelPosition='right'/><br/>
-                        <Button primary content='录入' style={{marginBottom:'10px'}}/>
+                        <Button
+                            primary content='录入'
+                            style={{marginBottom:'10px'}}
+                            as={Link}
+                            to="/home/navbar2/mess1"
+                        />
                     </Segment>
                 </div>
 

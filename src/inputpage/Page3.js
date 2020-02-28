@@ -1,5 +1,6 @@
 import React from 'react';
 import {Button, Input, Segment, TextArea} from "semantic-ui-react";
+import {Link} from "react-router-dom";
 require('./Page1.css')
 
 class Page2 extends React.Component{
@@ -19,7 +20,12 @@ class Page2 extends React.Component{
                         <div>
                         <TextArea id='text' className='page_text1' placeholder='病情描述'/>
                         </div>
-                        <Button primary content='录入' style={{marginBottom:'10px'}}/>
+                        <Button
+                            primary content='录入'
+                            style={{marginBottom:'10px'}}
+                            as={Link}
+                            to="/home/navbar1/mess1"
+                        />
                     </Segment>
                 </div>
 

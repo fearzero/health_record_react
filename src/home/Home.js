@@ -28,7 +28,7 @@ class Home extends React.Component{
                                 >查询</Dropdown.Item>
                                 <Dropdown.Item
                                     as={Link}
-                                    to="/home/navbar1/selectPage1"
+                                    to="/home/navbar1/a_selectPage1"
                                 >精准查询</Dropdown.Item>
                                 <Dropdown.Item
                                     as={Link}
@@ -38,7 +38,10 @@ class Home extends React.Component{
                                     as={Link}
                                     to="/home/navbar1/Page4"
                                 >修改</Dropdown.Item>
-                                <Dropdown.Item>删除</Dropdown.Item>
+                                <Dropdown.Item
+                                    as={Link}
+                                    to="/home/navbar1/delPage1"
+                                >删除</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     <Dropdown item text='体检信息管理' pointing simple>
@@ -53,7 +56,7 @@ class Home extends React.Component{
                             >查询</Dropdown.Item>
                             <Dropdown.Item
                                 as={Link}
-                                to="/home/navbar2/selectPage2"
+                                to="/home/navbar2/a_selectPage2"
                             >精准查询</Dropdown.Item>
                             <Dropdown.Item
                                 as={Link}
@@ -63,7 +66,10 @@ class Home extends React.Component{
                                 as={Link}
                                 to="/home/navbar2/Page5"
                             >修改</Dropdown.Item>
-                            <Dropdown.Item>删除</Dropdown.Item>
+                            <Dropdown.Item
+                                as={Link}
+                                to="/home/navbar2/delPage2"
+                            >删除</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                     <Dropdown item text='疾病信息管理' pointing simple>
@@ -78,7 +84,7 @@ class Home extends React.Component{
                             >查询</Dropdown.Item>
                             <Dropdown.Item
                                 as={Link}
-                                to="/home/navbar3/selectPage3"
+                                to="/home/navbar3/a_selectPage3"
                             >精准查询</Dropdown.Item>
                             <Dropdown.Item
                                 as={Link}
@@ -88,7 +94,10 @@ class Home extends React.Component{
                                 as={Link}
                                 to="/home/navbar3/Page6"
                             >修改</Dropdown.Item>
-                            <Dropdown.Item>删除</Dropdown.Item>
+                            <Dropdown.Item
+                                as={Link}
+                                to="/home/navbar3/delPage3"
+                            >删除</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                     <Dropdown item text='系统问题反馈' pointing simple>
