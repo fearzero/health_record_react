@@ -33,6 +33,7 @@ class Login extends React.Component {
             data=>{
                 if(data.code==="200"){
                     window.open("/home/navbar/welcome")
+                    window.close()
                 }else {
                     window.alert("账户密码错误")
                 }

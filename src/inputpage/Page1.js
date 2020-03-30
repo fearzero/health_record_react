@@ -62,7 +62,7 @@ class Page1 extends React.Component{
             is_marriage:event.target.value,
         })
     }
-    postLogin(){
+    postInput1(){
         let text={basic_name:this.state.name,
             basic_age:this.state.age,
             basic_sex:this.state.sex,
@@ -82,22 +82,22 @@ class Page1 extends React.Component{
                     'Content-Type': 'application/json; charset=utf-8',
                     'Accept': 'application/json',
                 },
-             body: sendData
+                body: sendData
 
             }
         ).then(res=>res.json()).then(
             data=>{
                 if(data.code==="200"){
                     window.open("/home/navbar1/mess1")
-                    window.close()
+                    // window.close()
                 }else {
                     window.alert("信息录入失败")
                 }
             }
         )
     }
-    handleLoginPost=()=>{
-        this.postLogin()
+    handleInputPost1=()=>{
+        this.postInput1()
     }
     render(){
         return(
@@ -144,7 +144,7 @@ class Page1 extends React.Component{
                         <Button
                             primary content='录入'
                             style={{marginBottom:'10px'}}
-                            onClick={this.handleLoginPost}
+                            onClick={this.handleInputPost1}
                             // as={Link}
                             // to="/home/navbar1/mess1"
                         />
