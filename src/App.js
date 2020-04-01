@@ -25,6 +25,8 @@ import delPage1 from "./delpage/delPage1"
 import delPage2 from "./delpage/delPage2"
 import delPage3 from "./delpage/delPage3"
 import mess1 from "./message/mess1"
+import mess2 from "./message/mess2"
+import mess3 from "./message/mess3"
 class App extends React.Component {
     render(){
         return(
@@ -57,6 +59,8 @@ class App extends React.Component {
                     <Route exact path="/" component={webindex} />
                     <Route path="/register" component={register} />
                     <Route path="/login" component={Login} />
+                    <Route path="/mess2" component={mess2} />
+                    <Route path="/mess3" component={mess3} />
 
                 </div>
             </Router>

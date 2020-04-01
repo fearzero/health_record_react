@@ -61,9 +61,12 @@ class register extends React.Component {
         ).then(res=>res.json()).then(
             data=>{
                 if(data.code==="200"){
-                    window.open("/home/navbar1/mess1")
+                    window.open("/mess3")
+                    window.close()
+
                 }else {
-                    window.alert("注册失败请重试")
+                    window.open("/mess2")
+                    window.close()
                 }
             }
         )

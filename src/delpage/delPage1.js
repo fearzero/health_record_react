@@ -1,7 +1,49 @@
 import React from 'react';
 import {Button, Input, Segment} from "semantic-ui-react";
-import {Link} from "react-router-dom";
 class delPage1 extends React.Component{
+    constructor(props) {  //构造函数
+        super(props);
+        this.state = {
+            user_id:"",
+        }
+    }
+    handleGetUser_idValue =(event) =>{
+        this.setState({
+            user_id:event.target.value,
+        })
+    }
+    postDelete1(){
+        let text={
+            user_id:this.state.user_id
+        }
+        let sendData=JSON.stringify(text);
+        fetch(`http://localhost:8080/management/deleteuser`,{
+
+                method:'POST',
+
+                mode: 'cors',
+
+                headers: {
+                    'Content-Type': 'application/json; charset=utf-8',
+                    'Accept': 'application/json',
+                },
+                body: sendData
+
+            }
+        ).then(res=>res.json()).then(
+            data=>{
+                if(data.code==="200"){
+                    window.open("/home/navbar1/mess1")
+                    window.close()
+                }else {
+                    window.alert("信息删除失败")
+                }
+            }
+        )
+    }
+    handleDeletePost1=()=>{
+        this.postDelete1()
+    }
     render(){
         return(
             <div id='in_page1'>
@@ -9,12 +51,17 @@ class delPage1 extends React.Component{
                     <Segment id='alter_page' style={{marginTop:'150px'}}>
                         <h1>人员档案</h1>
                         <h5>指定删除信息的用户</h5>
-                        <Input id='user_id' className='page1_input1' placeholder='体检用户编码'/><br/>
+                        <Input id='user_id'
+                               value={this.state.user_id}
+                               onChange={this.handleGetUser_idValue}
+                               className='page1_input1'
+                               placeholder='体检用户编码'/><br/>
                         <Button
-                            primary content='删除'
+                            primary content='录入'
                             style={{marginBottom:'10px'}}
-                            as={Link}
-                            to="/home/navbar1/mess1"
+                            onClick={this.handleDeletePost1}
+                            // as={Link}
+                            // to="/home/navbar2/mess1"
                         />
                     </Segment>
                 </div>

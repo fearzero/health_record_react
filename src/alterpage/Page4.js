@@ -98,7 +98,7 @@ class Page4 extends React.Component{
                     window.open("/home/navbar1/mess1")
                     // window.close()
                 }else {
-                    window.alert("信息录入失败")
+                    window.alert("信息修改失败")
                 }
             }
         )
