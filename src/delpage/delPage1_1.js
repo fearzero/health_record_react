@@ -1,25 +1,23 @@
 import React from 'react';
 import {Button, Input, Segment} from "semantic-ui-react";
-
-class delPage2 extends React.Component{
+class delPage1_1 extends React.Component{
     constructor(props) {  //构造函数
         super(props);
         this.state = {
-            user_id:"",
+            user_id:this.props.location.state.user_id,
         }
-
     }
     handleGetUser_idValue =(event) =>{
         this.setState({
             user_id:event.target.value,
         })
     }
-    postDelete2(){
+    postDelete1(){
         let text={
             user_id:this.state.user_id
         }
         let sendData=JSON.stringify(text);
-        fetch(`http://localhost:8080/management/deleteuserinfo`,{
+        fetch(`http://localhost:8080/management/deleteuser`,{
 
                 method:'POST',
 
@@ -43,21 +41,16 @@ class delPage2 extends React.Component{
             }
         )
     }
-    handleDeletePost2=()=>{
-        this.postDelete2()
+    handleDeletePost1=()=>{
+        this.postDelete1()
     }
-
-
-
-
     render(){
-        // this.setState({user_id:this.props.location.state.user_id})
+
         return(
             <div id='in_page1'>
                 <div id='in_page2'>
                     <Segment id='alter_page' style={{marginTop:'150px'}}>
-                        <h1>体检信息</h1>
-
+                        <h1>人员档案</h1>
                         <h5>指定删除信息的用户</h5>
                         <Input id='user_id'
                                value={this.state.user_id}
@@ -75,8 +68,8 @@ class delPage2 extends React.Component{
                 </div>
             </div>
 
-                );
+        );
     }
 }
 
-export default delPage2;
+export default delPage1_1;

@@ -3,6 +3,7 @@ import {List} from "semantic-ui-react";
 import {Label} from "semantic-ui-react";
 import {Image} from "semantic-ui-react";
 
+import { Link} from 'react-router-dom';
 
 class ListPageChild2 extends React.Component{
     constructor(props) {  //构造函数
@@ -17,6 +18,8 @@ class ListPageChild2 extends React.Component{
             totalPages: 0,
             userList : [],
             useData:"",
+            user_id:0,
+            key:1,
 
         }
     }
@@ -48,16 +51,22 @@ class ListPageChild2 extends React.Component{
         )
     }
     componentDidMount(){this.postSelect1()}
+    pushone(){
+        this.props.history.push({pathname:'/home/navbar1/delPage1' ,query:{user_id:2}})
+    }
+
+
     render(){
         return(
             <div id="list_page_div4">
 
-                <List divided verticalAlign='massive' size='big'>
+                <List divided verticalAlign='middle' size='massive'>
                     {
-                        this.state.userList.map(function(list){
+                        this.state.userList.map(function(list,key){
+
                             return(
-                                <List.Item>
-                                    <Label horizontal>{list.basic_id}</Label>
+                                <List.Item key={key}>
+                                    <Label horizontal>{key}</Label>
                                     <Image avatar src='https://react.semantic-ui.com/images/avatar/small/rachel.png' />
                                     <List.Content>
                                         <List.Header as='a'>{list.basic_name}</List.Header>
@@ -65,14 +74,26 @@ class ListPageChild2 extends React.Component{
                                             just now.
                                         </List.Description>
                                     </List.Content>
-                                    <Label horizontal>{list.basic_id}</Label>
+                                    <Label horizontal>用户编码:{list.basic_id}</Label>
+                                    <div style={{float:"right"}}>
+                                        <Link to={{
+                                        pathname: `/home/navbar2/Page5_1`,
+                                        state:{user_id:list.basic_id}
+                                    }}>更新</Link>
+                                        &nbsp;&nbsp;&nbsp;
+                                        <Link
+                                            to={{
+                                                pathname: `/home/navbar2/delPage2_1`,
+                                                state:{user_id:list.basic_id}
+                                            }}>删除</Link>
+                                    </div>
+
                                 </List.Item>
                             )
                         })
 
                     }
                     <List.Item>
-                        <Label horizontal>{this.state.userData}</Label>
                     </List.Item>
 
                 </List>

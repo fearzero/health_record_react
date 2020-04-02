@@ -5,7 +5,9 @@ import Page1 from './inputpage/Page1';
 import Page2 from './inputpage/Page2';
 import Page3 from './inputpage/Page3';
 import Page4 from './alterpage/Page4';
+import Page4_1 from './alterpage/Page4_1';
 import Page5 from './alterpage/Page5';
+import Page5_1 from './alterpage/Page5_1';
 import Page6 from './alterpage/Page6';
 import Login from './login/login';
 import register from './login/register';
@@ -26,6 +28,8 @@ import ListPage1 from "./selectpage/ListPage1";
 import delPage1 from "./delpage/delPage1"
 import delPage2 from "./delpage/delPage2"
 import delPage3 from "./delpage/delPage3"
+import delPage1_1 from "./delpage/delPage1_1"
+import delPage2_1 from "./delpage/delPage2_1"
 import mess1 from "./message/mess1"
 import mess2 from "./message/mess2"
 import mess3 from "./message/mess3"
@@ -44,7 +48,9 @@ class App extends React.Component {
                     <Route path="/home/navbar2/Page2" component={Page2} />
                     <Route path="/home/navbar3/Page3" component={Page3} />
                     <Route path="/home/navbar1/Page4" component={Page4} />
+                    <Route path="/home/navbar1/Page4_1" component={Page4_1} />
                     <Route path="/home/navbar2/Page5" component={Page5} />
+                    <Route path="/home/navbar2/Page5_1" component={Page5_1} />
                     <Route path="/home/navbar3/Page6" component={Page6} />
                     <Route path="/home/navbar1/ListPage1" component={ListPage1} />
                     <Route path="/home/navbar2/ListPage2" component={ListPage2} />
@@ -57,6 +63,8 @@ class App extends React.Component {
                     <Route path="/home/navbar1/delPage1" component={delPage1} />
                     <Route path="/home/navbar2/delPage2" component={delPage2} />
                     <Route path="/home/navbar3/delPage3" component={delPage3} />
+                    <Route path="/home/navbar1/delPage1_1" component={delPage1_1} />
+                    <Route path="/home/navbar2/delPage2_1" component={delPage2_1} />
                     <Route path="/home/navbar1/mess1" component={mess1} />
                     <Route path="/home/navbar2/mess1" component={mess1} />
                     <Route path="/home/navbar3/mess1" component={mess1} />

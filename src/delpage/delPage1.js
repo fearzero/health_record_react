@@ -45,6 +45,7 @@ class delPage1 extends React.Component{
         this.postDelete1()
     }
     render(){
+
         return(
             <div id='in_page1'>
                 <div id='in_page2'>

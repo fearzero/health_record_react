@@ -88,7 +88,7 @@ class ListPage2 extends React.Component{
                                 boundaryRange={boundaryRange}
                                 onPageChange={this.handlePaginationChange}
                                 onClick={this.handleChangePage}
-                                size='big'
+                                size='huge'
                                 siblingRange={siblingRange}
                                 totalPages={totalPages}
                                 // Heads up! All items are powered by shorthands, if you want to hide one of them, just pass `null` as value
@@ -105,7 +105,6 @@ class ListPage2 extends React.Component{
                                 min={1}
                                 onChange={this.handleInputChange}
                                 type='number'
-
                                 value={activePage}
                             />
 
