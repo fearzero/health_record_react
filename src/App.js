@@ -21,6 +21,8 @@ import selectPage3 from "./selectpage/selectPage3";
 import a_selectPage1 from "./selectpage/a_selectPage1";
 import a_selectPage2 from "./selectpage/a_selectPage2";
 import a_selectPage3 from "./selectpage/a_selectPage3";
+import ListPage2 from "./selectpage/ListPage2";
+import ListPage1 from "./selectpage/ListPage1";
 import delPage1 from "./delpage/delPage1"
 import delPage2 from "./delpage/delPage2"
 import delPage3 from "./delpage/delPage3"
@@ -44,6 +46,8 @@ class App extends React.Component {
                     <Route path="/home/navbar1/Page4" component={Page4} />
                     <Route path="/home/navbar2/Page5" component={Page5} />
                     <Route path="/home/navbar3/Page6" component={Page6} />
+                    <Route path="/home/navbar1/ListPage1" component={ListPage1} />
+                    <Route path="/home/navbar2/ListPage2" component={ListPage2} />
                     <Route path="/home/navbar1/selectPage1" component={selectPage1} />
                     <Route path="/home/navbar2/selectPage2" component={selectPage2} />
                     <Route path="/home/navbar3/selectPage3" component={selectPage3} />

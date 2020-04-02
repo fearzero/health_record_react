@@ -73,17 +73,13 @@ class Page1 extends React.Component{
         }
         let sendData=JSON.stringify(text);
         fetch(`http://localhost:8080/management/insertuser`,{
-
                 method:'POST',
-
                 mode: 'cors',
-
                 headers: {
                     'Content-Type': 'application/json; charset=utf-8',
                     'Accept': 'application/json',
                 },
                 body: sendData
-
             }
         ).then(res=>res.json()).then(
             data=>{

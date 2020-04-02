@@ -1,0 +1,37 @@
+#list_page_seg1{
+    width:1250px;
+    height: 600px;
+    text-align: center;
+    margin-left: 15px;
+
+}
+#list_page_seg2{
+    width:1250px;
+    height: 100px;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+#list_page_h1{
+    width:1250px;
+    text-align: center;
+}
+#list_page_div1{
+    text-align: center;
+    /*background-color: #0d71bb;*/
+    width:1250px;
+    height: 700px;
+    margin-left: 0px;
+}
+#list_page_div2{
+    /*background-color: #19b82b;*/
+    width:1250px;
+    height: 600px;
+}
+#list_page_div3{
+    /*background-color: #54ffff;*/
+    width:1250px;
+    height: 100px;
+}
+#list_page_div4{
+    text-align: left;
+}

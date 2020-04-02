@@ -24,11 +24,11 @@ class Home extends React.Component{
                                 >录入</Dropdown.Item>
                                 <Dropdown.Item
                                     as={Link}
-                                    to="/home/navbar1/selectPage1"
+                                    to="/home/navbar1/ListPage1"
                                 >查询</Dropdown.Item>
                                 <Dropdown.Item
                                     as={Link}
-                                    to="/home/navbar1/a_selectPage1"
+                                    to="/home/navbar1/ListPage1"
                                 >精准查询</Dropdown.Item>
                                 <Dropdown.Item
                                     as={Link}
@@ -52,7 +52,7 @@ class Home extends React.Component{
                             >录入</Dropdown.Item>
                             <Dropdown.Item
                                 as={Link}
-                                to="/home/navbar2/selectPage2"
+                                to="/home/navbar2/ListPage2"
                             >查询</Dropdown.Item>
                             <Dropdown.Item
                                 as={Link}
