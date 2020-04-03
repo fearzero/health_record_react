@@ -66,26 +66,35 @@ class ListPageChild2 extends React.Component{
 
                             return(
                                 <List.Item key={key}>
-                                    <Label horizontal>{key}</Label>
+                                    <Label horizontal>{key+1}</Label>
                                     <Image avatar src='https://react.semantic-ui.com/images/avatar/small/rachel.png' />
                                     <List.Content>
-                                        <List.Header as='a'>{list.basic_name}</List.Header>
+                                        <List.Header as={Link}
+                                                     to={{
+                                                         pathname: `/home/navbar2/Page5_1`,
+                                                         state:{user_id:list.basic_id}
+                                                     }}
+                                        >{list.basic_name}</List.Header>
                                         <List.Description>
                                             just now.
                                         </List.Description>
                                     </List.Content>
                                     <Label horizontal>用户编码:{list.basic_id}</Label>
                                     <div style={{float:"right"}}>
+                                        <Label>
                                         <Link to={{
                                         pathname: `/home/navbar2/Page5_1`,
                                         state:{user_id:list.basic_id}
                                     }}>更新</Link>
+                                        </Label>
                                         &nbsp;&nbsp;&nbsp;
+                                        <Label>
                                         <Link
                                             to={{
                                                 pathname: `/home/navbar2/delPage2_1`,
                                                 state:{user_id:list.basic_id}
                                             }}>删除</Link>
+                                        </Label>
                                     </div>
 
                                 </List.Item>

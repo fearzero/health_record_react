@@ -1,0 +1,40 @@
+#userpage1{
+    width: 1280px;
+    height: 800px;
+
+    float: left;
+}
+#userpage2{
+    width:450px;
+    height: 650px;
+    text-align: center;
+    float: left;
+    margin-top: 30px;
+    margin-left: 60px;
+}
+#userpage3{
+    width:450px;
+    height: 650px;
+    margin-top: 30px;
+    margin-left: 60px;
+    text-align: center;
+    float: left;
+}
+#userpage4{
+  margin-left: 20px;
+    text-align: center;
+    width: 100px;
+    float: left;
+}#userpage5{
+     margin-left: 5px;
+     width: 300px;
+     text-align: left;
+     float: left;
+ }
+
+#userpage6{
+
+    width: 1000px;
+    text-align: center;
+    float: contour;
+}
