@@ -78,7 +78,6 @@ class ListPage1 extends React.Component{
                         <div id="list_page_div2">
                             <Segment secondary id='list_page_seg1'>
                                 <ListPageChild1 key={this.state.key} activePage={this.state.activePage}/>
-
                             </Segment>
                         </div>
                         <Segment  secondary id="list_page_seg2">

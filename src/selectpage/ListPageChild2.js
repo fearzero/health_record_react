@@ -71,7 +71,7 @@ class ListPageChild2 extends React.Component{
                                     <List.Content>
                                         <List.Header as={Link}
                                                      to={{
-                                                         pathname: `/home/navbar2/Page5_1`,
+                                                         pathname: `/home/navbar1/userpage`,
                                                          state:{user_id:list.basic_id}
                                                      }}
                                         >{list.basic_name}</List.Header>

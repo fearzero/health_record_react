@@ -1,19 +1,23 @@
-#select_page1{
-    width: 1000px;
-    height: 650px;
-    margin-left: 400px;
-    float: left;
-}
-#select_page2{
-    width:1000px;
-    height: 650px;
-    text-align: center;
-    opacity:0%;
-}
-.select_input1{
-    width: 100px;
-    margin-bottom: 20px;
+/*#select_page1{*/
+/*    width: 1280px;*/
+/*    height: 200px;*/
+/*    float: left;*/
+/*}*/
+/*#select_page2{*/
+/*    width:1280px;*/
+/*    height: 200px;*/
+/*    text-align: center;*/
 
-    float: left;
-
+/*}*/
+#select_page3{
+    margin-top: 40px;
+    width:1280px;
+    height: 450px;
 }
+/*.select_input1{*/
+/*    width: 100px;*/
+/*    margin-bottom: 20px;*/
+
+/*    float: left;*/
+
+/*}*/

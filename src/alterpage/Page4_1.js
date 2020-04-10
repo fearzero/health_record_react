@@ -76,7 +76,9 @@ class Page4_1 extends React.Component{
             identity_id:this.state.iden_id,
             basic_contact:this.state.contact_num,
             basic_birthday:this.state.birthday,
-            basic_address:this.state.address
+            basic_address:this.state.address,
+            basic_job:this.state.job,
+            is_marriage:this.state.is_marriage,
         }
         let sendData=JSON.stringify(text);
         fetch(`http://localhost:8080/management/upadtauser`,{
@@ -141,6 +143,8 @@ class Page4_1 extends React.Component{
                     })
                     this.setState({
                         address:data.DATA.basic_name,
+                        job:data.DATA.basic_job,
+                        is_marriage:data.DATA.is_marriage,
                     })
                 }else {
                     window.alert("信息修改失败")

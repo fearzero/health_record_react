@@ -1,21 +1,25 @@
+
 import React from 'react';
-import {List} from "semantic-ui-react";
+import { List} from "semantic-ui-react";
 import {Label} from "semantic-ui-react";
 import {Image} from "semantic-ui-react";
 import {Link} from "react-router-dom";
 
 
-class ListPageChild1 extends React.Component{
+class SelectPageChild1 extends React.Component{
     constructor(props) {  //构造函数
         super(props);
         this.state = {
+            name:props.name,
+            age:props.age,
+            sex:props.sex,
             activePage: props.activePage,
             boundaryRange: 1,
             siblingRange: 1,
             showEllipsis: true,
             showFirstAndLastNav: true,
             showPreviousAndNextNav: true,
-            totalPages: 0,
+            totalPages: 5,
             userList : [],
             useData:"",
 
@@ -23,8 +27,11 @@ class ListPageChild1 extends React.Component{
     }
     postSelect1(){
         let text={
+            basic_name:this.state.name,
+            basic_age:this.state.age,
+            basic_sex:this.state.sex,
             pageNum:this.state.activePage.toString(),
-            pageSize:"8"
+            pageSize:"6"
         }
         let sendData=JSON.stringify(text);
         fetch(`http://localhost:8080/management/selectuserlist`,{
@@ -49,12 +56,16 @@ class ListPageChild1 extends React.Component{
             }
         )
     }
+    componentDidUpdate(){this.postSelect1()}
     componentDidMount(){this.postSelect1()}
+
     render(){
+
         return(
+
             <div id="list_page_div4">
 
-                <List divided verticalAlign='middle' size='massive'>
+                    <List divided verticalAlign='middle' size='massive'>
                     {
                         this.state.userList.map(function(list,key){
                             return(
@@ -75,17 +86,17 @@ class ListPageChild1 extends React.Component{
                                     <Label horizontal>{list.basic_id}</Label>
                                     <div style={{float:"right"}}>
                                         <Label>
-                                    <Link to={{
-                                        pathname: `/home/navbar1/Page4_1`,
-                                        state:{user_id:list.basic_id}
-                                    }}>更新</Link>
+                                            <Link to={{
+                                                pathname: `/home/navbar1/Page4_1`,
+                                                state:{user_id:list.basic_id}
+                                            }}>更新</Link>
                                         </Label>
-                                    &nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;
                                         <Label>
-                                    <Link to={{
-                                        pathname: `/home/navbar1/delPage1_1`,
-                                        state:{user_id:list.basic_id}
-                                    }}>删除</Link>
+                                            <Link to={{
+                                                pathname: `/home/navbar1/delPage1_1`,
+                                                state:{user_id:list.basic_id}
+                                            }}>删除</Link>
                                         </Label>
                                     </div>
                                 </List.Item>
@@ -98,9 +109,12 @@ class ListPageChild1 extends React.Component{
                     </List.Item>
 
                 </List>
+
+
             </div>
-           )
+
+        )
 
     }
 }
-export default ListPageChild1;
+export default SelectPageChild1;

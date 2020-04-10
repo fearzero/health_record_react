@@ -5,78 +5,160 @@ class userpage extends React.Component{
     constructor(props) {  //构造函数
         super(props);
         this.state = {
-            user_id:"",
-            name:"",
-            age:"",
-            sex:"",
-            iden_id:"",
-            contact_num:"",
-            birthday:"",
-            address:"",
-            job:"",
-            is_marriage:"",
+            user_id:this.props.location.state.user_id,
+            name:"zhao",
+            age:"15",
+            sex:"男",
+            iden_id:"89544125",
+            contact_num:"89741263652",
+            birthday:"2020-03-01",
+            address:"山东",
+            job:"职业",
+            is_marriage:"是",
+            create_time:"2020-01-02",
+            count:"1001",
+            height:"172",
+            weight:"75",
+            lung_capacity:"5000",
+            s_blood_pressure:"88",
+            d_blood_pressure:"160",
         }
     }
+    postSelectInfo1(){
+        let text={user_id:this.state.user_id.toString(),
+        }
+        let sendData=JSON.stringify(text);
+        fetch(`http://localhost:8080/management/selectuser`,{
+                method:'POST',
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json; charset=utf-8',
+                    'Accept': 'application/json',
+                },
+                body: sendData
+            }
+        ).then(res=>res.json()).then(
+            data=>{
+                if(data.CODE==="200"){
+                  this.setState({
+                      name:data.DATA.basic_name,
+                      age:data.DATA.basic_age,
+                      sex:data.DATA.basic_name,
+                      iden_id:data.DATA.identity_id,
+                      contact_num:data.DATA.basic_contact,
+                      birthday:data.DATA.basic_birthday,
+                      address:data.DATA.basic_address,
+                      job:data.DATA.basic_job,
+                      is_marriage:data.DATA.is_marriage,
+                      create_time:data.DATA.basic_time,
+
+                  })
+                }else {
+                    window.alert("信息录入失败")
+                }
+            }
+        )
+    }
+    postSelectInfo2(){
+        let text={user_id:this.state.user_id.toString(),
+        }
+        let sendData=JSON.stringify(text);
+        fetch(`http://localhost:8080/management/selectuserinfo`,{
+                method:'POST',
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json; charset=utf-8',
+                    'Accept': 'application/json',
+                },
+                body: sendData
+            }
+        ).then(res=>res.json()).then(
+            data=>{
+                if(data.CODE==="200"){
+                    this.setState({
+
+                        count:data.DATA.count,
+                        height:data.DATA.height,
+                        weight:data.DATA.weight,
+                        lung_capacity:data.DATA.lung_capacity,
+                        s_blood_pressure:data.DATA.s_blood_pressure,
+                        d_blood_pressure:data.DATA.d_blood_pressure,
+                    })
+                }else {
+                    window.alert("信息录入失败")
+                }
+            }
+        )
+    }
+
+    componentDidMount(){
+        this.postSelectInfo1()
+      this.postSelectInfo2()}
+
     render(){
 
         return(
             <div id='in_page1'>
                 <div id='userpage1'>
+                    <Segment id='userpage1' secondary={true}>
                     <div style={{textAlign:"center"}}>
-                        <Segment id="userpage6">llll</Segment>
+                        <Segment id="userpage6"><h1>健康信息详情</h1></Segment>
                     </div>
                     <Segment.Group id="userpage2">
-                        <Segment>Top</Segment>
+                        <Segment><h3>个人档案信息</h3></Segment>
                         <Segment.Group>
                             <Segment.Group horizontal>
                                 <Segment.Group id="userpage4">
-                                    <Segment > Top</Segment>
-                                    <Segment>iddle</Segment>
-                                    <Segment >Top</Segment>
-                                    <Segment> Middle</Segment>
-                                    <Segment > Top</Segment>
-                                    <Segment>Middle</Segment>
-                                    <Segment >Top</Segment>
-                                    <Segment>Middle</Segment>
-                                    <Segment >Top</Segment>
-                                    <Segment>Middle</Segment>
+                                    <Segment >用户编码</Segment>
+                                    <Segment > 姓名</Segment>
+                                    <Segment>年龄</Segment>
+                                    <Segment >性别</Segment>
+                                    <Segment> 证件号</Segment>
+                                    <Segment > 联系号码</Segment>
+                                    <Segment>生日</Segment>
+                                    <Segment >家庭住址</Segment>
+                                    <Segment>工作</Segment>
+                                    <Segment >婚姻状态</Segment>
+                                    <Segment >建立时间</Segment>
                                 </Segment.Group>
                                 <Segment.Group id="userpage5">
-                                    <Segment >Top</Segment>
-                                    <Segment>Middle</Segment>
-                                    <Segment >Top</Segment>
-                                    <Segment>Middle</Segment>
-                                    <Segment >Top</Segment>
-                                    <Segment>Nested Middle</Segment>
-                                    <Segment >Nested Top</Segment>
-                                    <Segment>Nested Middle</Segment>
-                                    <Segment >Nested Top</Segment>
-                                    <Segment>Nested Middle</Segment>
+                                    <Segment >{this.state.user_id}</Segment>
+                                    <Segment>{this.state.name}</Segment>
+                                    <Segment >{this.state.age}</Segment>
+                                    <Segment>{this.state.sex}</Segment>
+                                    <Segment >{this.state.iden_id}</Segment>
+                                    <Segment>{this.state.contact_num} </Segment>
+                                    <Segment >{this.state.birthday}</Segment>
+                                    <Segment>{this.state.address}</Segment>
+                                    <Segment >{this.state.job}</Segment>
+                                    <Segment >{this.state.is_marriage}</Segment>
+                                    <Segment >{this.state.create_time}</Segment>
                                 </Segment.Group>
                             </Segment.Group>
                         </Segment.Group>
 
                     </Segment.Group>
                     <Segment.Group id="userpage3">
-                        <Segment >Middle</Segment>
+                        <Segment ><h3>体检信息</h3></Segment>
                         <Segment.Group >
                             <Segment.Group horizontal>
                                 <Segment.Group id="userpage4">
-                                    <Segment > Top</Segment>
-                                    <Segment> Middle</Segment>
-                                    <Segment > Top</Segment>
-                                    <Segment> Middle</Segment>
-                                    <Segment >Top</Segment>
-                                    <Segment> Middle</Segment>
+                                    <Segment> 体检编次</Segment>
+                                    <Segment > 身高</Segment>
+                                    <Segment> 体重</Segment>
+                                    <Segment > 肺活量</Segment>
+                                    <Segment> 收缩压</Segment>
+                                    <Segment >舒张压</Segment>
+
 
                                 </Segment.Group>
                                 <Segment.Group id="userpage5">
-                                    <Segment >Nested Top</Segment>
-                                    <Segment>Nested Middle</Segment>
-                                    <Segment >Nested Top</Segment>
-                                    <Segment>Nested Middle</Segment>
-                                    <Segment >Nested Top</Segment>
-                                    <Segment>Nested Middle</Segment>
+                                    <Segment >{this.state.count}</Segment>
+                                    <Segment>{this.state.height}cm</Segment>
+                                    <Segment >{this.state.weight}kg</Segment>
+                                    <Segment>{this.state.lung_capacity}mL</Segment>
+                                    <Segment >{this.state.s_blood_pressure}mmHg</Segment>
+                                    <Segment>{this.state.d_blood_pressure}mmHg</Segment>
 
                                 </Segment.Group>
 
@@ -85,6 +167,7 @@ class userpage extends React.Component{
                         </Segment.Group>
                         <Segment >Bottom</Segment>
                     </Segment.Group>
+                    </Segment>
                 </div>
             </div>
 

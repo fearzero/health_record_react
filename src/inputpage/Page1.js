@@ -69,7 +69,9 @@ class Page1 extends React.Component{
             identity_id:this.state.iden_id,
             basic_contact:this.state.contact_num,
             basic_birthday:this.state.birthday,
-            basic_address:this.state.address
+            basic_address:this.state.address,
+            basic_job:this.state.job,
+            is_marriage:this.state.is_marriage,
         }
         let sendData=JSON.stringify(text);
         fetch(`http://localhost:8080/management/insertuser`,{
