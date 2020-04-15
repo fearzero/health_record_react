@@ -10,17 +10,11 @@ class SelectPageChild1 extends React.Component{
     constructor(props) {  //构造函数
         super(props);
         this.state = {
-            name:props.name,
-            age:props.age,
-            sex:props.sex,
             activePage: props.activePage,
-            boundaryRange: 1,
-            siblingRange: 1,
-            showEllipsis: true,
-            showFirstAndLastNav: true,
-            showPreviousAndNextNav: true,
-            totalPages: 5,
-            userList : [],
+            basic_name:props.name,
+            basic_age:props.age,
+            basic_sex:props.sex,
+            userList : props.userList,
             useData:"",
 
         }
@@ -56,8 +50,20 @@ class SelectPageChild1 extends React.Component{
             }
         )
     }
-    componentDidUpdate(){this.postSelect1()}
-    componentDidMount(){this.postSelect1()}
+    // componentDidMount(){this.postSelect1()}
+    componentWillReceiveProps(nextProps) {
+        this.setState(
+        {
+        userList: nextProps.userList,
+            activePage: nextProps.activePage,
+            // basic_name:nextProps.name,
+            // basic_age:nextProps.age,
+            // basic_sex:nextProps.sex,
+        }
+
+        );
+        // this.postSelect1()
+    }
 
     render(){
 

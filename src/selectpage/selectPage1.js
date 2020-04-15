@@ -21,12 +21,12 @@ class selectPage1 extends React.Component{
             useData:"",
             key:1,
              K:1,
+            loading:"true",
 
         }
     }
 
-    handleInputChange
-        =(event,{ name, value }) =>{
+    handleInputChange =(event,{ name, value }) =>{
         this.setState({
             [name]:event.target.value,
         })}
@@ -34,21 +34,66 @@ class selectPage1 extends React.Component{
         this.setState({key:this.state.key+1})
         // window.alert(activePage)
     }
-    handleGetNameValue = (e, { name }) =>{this.setState({ name });
-        this.setState({key:this.state.key+1})
-        // window.alert(activePage)
+    // handlePaginationChange =(event) =>{
+    //     this.setState({
+    //         activePage:event.target.value,
+    //     })
+    // }
+    handleGetNameValue =(event) =>{
+        this.setState({
+            name:event.target.value,
+        })
     }
-    handleGetAgeValue = (e, { age }) =>{this.setState({ age });
-        this.setState({key:this.state.key+1})
-        // window.alert(activePage)
+    handleGetAgeValue =(event) =>{
+        this.setState({
+            age:event.target.value,
+        })
     }
-    handleGetSexValue = (e, { sex }) =>{this.setState({ sex });
-        this.setState({key:this.state.key+1})
-        // window.alert(activePage)
+    handleGetSexValue =(event) =>{
+        this.setState({
+            sex:event.target.value,
+        })
     }
     handleSelectChange(){
         this.setState({K:this.state.K+1})
     }
+    postSelect1(){
+        let text={
+            basic_name:this.state.name,
+            basic_age:this.state.age,
+            basic_sex:this.state.sex,
+            pageNum:this.state.activePage.toString(),
+            pageSize:"6"
+        }
+        let sendData=JSON.stringify(text);
+        fetch(`http://localhost:8080/management/selectuserlist`,{
+                method:'POST',
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json; charset=utf-8',
+                    'Accept': 'application/json',
+                },
+                body: sendData
+            }
+        ).then(res=>res.json()).then(
+            data=>{
+                if(data.CODE==="200"){
+                    this.setState({totalPages:data.DATA.pages})
+                    this.setState({userList:data.DATA.list})
+                    this.setState({userData:data.DATA.pageNum})
+
+                }else {
+                    window.alert("查询失败")
+                }
+            }
+        )
+    }
+    componentDidMount(){this.postSelect1()}
+    handleOnClick  =(e) =>{
+        this.postSelect1();
+        this.setState({loading:false})
+    }
+     // componentDidUpdate(){this.postSelect1()}
     render(){
         const {
             activePage,
@@ -77,14 +122,23 @@ class selectPage1 extends React.Component{
                                placeholder='年龄'/>&nbsp;&nbsp;&nbsp;
                         <Button primary content='查询'
 
+                                onClick={this.handleOnClick}
                                 style={{marginBottom:'10px' ,marginLeft:'20px'}}/>
                     </Segment>
                 </div>
                 <div id="select_page3">
-                    <Segment secondary={true}>
-                        <SelectPageChild1 key={this.state.key} K={this.state.K} age={this.state.age} name={this.state.name} sex={this.state.sex} activePage={this.state.activePage}/>
+                    <Segment id="select_page5" secondary={true}>
+                        <SelectPageChild1
+                            key={this.state.key}
+                            userList={this.state.userList}
+                            activePage={activePage}
+                            name={this.state.name}
+                            age={this.state.age}
+                            sex={this.state.sex}
+                        />
                     </Segment>
                 </div>
+                <div id="select_page4">
                 <Segment  secondary id="list_page_seg2">
                     <div id="list_page_div3">
                         <Pagination
@@ -115,6 +169,7 @@ class selectPage1 extends React.Component{
 
                     </div>
                 </Segment>
+                </div>
             </div>)
 
     }

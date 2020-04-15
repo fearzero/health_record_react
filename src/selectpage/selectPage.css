@@ -10,9 +10,19 @@
 
 /*}*/
 #select_page3{
-    margin-top: 40px;
+    margin-top: 10px;
     width:1280px;
-    height: 450px;
+    height: 500px;
+}
+#select_page4{
+    margin-top: 10px;
+    width:1280px;
+    height: 100px;
+}
+#select_page5{
+
+    width:1280px;
+    height: 500px;
 }
 /*.select_input1{*/
 /*    width: 100px;*/
