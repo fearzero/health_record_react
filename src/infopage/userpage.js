@@ -43,7 +43,7 @@ class userpage extends React.Component{
                   this.setState({
                       name:data.DATA.basic_name,
                       age:data.DATA.basic_age,
-                      sex:data.DATA.basic_name,
+                      sex:data.DATA.basic_sex,
                       iden_id:data.DATA.identity_id,
                       contact_num:data.DATA.basic_contact,
                       birthday:data.DATA.basic_birthday,
@@ -76,7 +76,6 @@ class userpage extends React.Component{
             data=>{
                 if(data.CODE==="200"){
                     this.setState({
-
                         count:data.DATA.count,
                         height:data.DATA.height,
                         weight:data.DATA.weight,
@@ -85,7 +84,7 @@ class userpage extends React.Component{
                         d_blood_pressure:data.DATA.d_blood_pressure,
                     })
                 }else {
-                    window.alert("信息录入失败")
+                    window.alert("信息查询失败")
                 }
             }
         )

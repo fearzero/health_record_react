@@ -34,7 +34,7 @@ class delPage2 extends React.Component{
             }
         ).then(res=>res.json()).then(
             data=>{
-                if(data.code==="200"){
+                if(data.CODE==="200"){
                     window.open("/home/navbar1/mess1")
                     window.close()
                 }else {
