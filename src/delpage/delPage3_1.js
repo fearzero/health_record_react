@@ -1,11 +1,11 @@
 import React from 'react';
 import {Button, Input, Segment} from "semantic-ui-react";
 import {Link} from "react-router-dom";
-class delPage3 extends React.Component{
+class delPage3_1 extends React.Component{
     constructor(props) {  //构造函数
         super(props);
         this.state = {
-            user_id:"",
+            user_id:this.props.location.state.user_id,
         }
 
     }
@@ -53,7 +53,11 @@ class delPage3 extends React.Component{
                     <Segment id='alter_page' style={{marginTop:'150px'}}>
                         <h1>疾病信息</h1>
                         <h5>指定删除信息的用户</h5>
-                        <Input id='user_id' className='page1_input1' placeholder='体检用户编码'/><br/>
+                        <Input id='user_id'
+                               className='page1_input1'
+                               value= {this.state.user_id}
+                               placeholder='体检用户编码'>
+                        </Input><br/>
                         <Button
                             primary content='删除'
                             style={{marginBottom:'10px'}}
@@ -64,8 +68,8 @@ class delPage3 extends React.Component{
                 </div>
             </div>
 
-                );
+        );
     }
 }
 
-export default delPage3;
+export default delPage3_1;

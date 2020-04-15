@@ -80,7 +80,7 @@ class Home extends React.Component{
                             >录入</Dropdown.Item>
                             <Dropdown.Item
                                 as={Link}
-                                to="/home/navbar3/selectPage3"
+                                to="/home/navbar3/ListPage3"
                             >查询</Dropdown.Item>
                             <Dropdown.Item
                                 as={Link}

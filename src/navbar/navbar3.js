@@ -31,7 +31,7 @@ class navbar1 extends React.Component {
                             active={activeItem === '精准查询'}
                             onClick={this.handleItemClick}
                             as={Link}
-                            to="/home/navbar3/a_selectPage3"
+                            to="/home/navbar3/ListPage3"
                         />
                         <Menu.Item
                             id='av1_item1'

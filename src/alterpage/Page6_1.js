@@ -1,12 +1,13 @@
 import React from 'react';
 import {Button, Input, Segment, TextArea} from "semantic-ui-react";
-require('./Page1.css')
+import {Link} from "react-router-dom";
 
-class Page2 extends React.Component{
+class Page6_1 extends React.Component{
     constructor(props) {  //构造函数
         super(props);
         this.state = {
-            user_id:"",
+            user_id:this.props.location.state.user_id,
+
             count:"",
             d_type:"",
             d_name:"",
@@ -39,7 +40,46 @@ class Page2 extends React.Component{
             d_desc:event.target.value,
         })
     }
-    postInput3(){
+    postSelectinfo6(){
+        let text={
+            user_id:this.state.user_id,
+        }
+        let sendData=JSON.stringify(text);
+        fetch(`http://localhost:8080/management/selectudisease`,{
+                method:'POST',
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json; charset=utf-8',
+                    'Accept': 'application/json',
+                },
+                body: sendData
+
+            }
+        ).then(res=>res.json()).then(
+            data=>{
+                if(data.CODE==="200"){
+
+                    this.setState({
+                        count:data.DATA.count,
+                    })
+                    this.setState({
+                        d_type:data.DATA.d_type,
+                    })
+                    this.setState({
+                        d_name:data.DATA.d_name,
+                    })
+                    this.setState({
+                        d_desc:data.DATA.d_desc,
+                    })
+
+                }else {
+                    window.alert("信息修改失败")
+                }
+            }
+        )
+    }
+    componentDidMount(){this.postSelectinfo6()}
+    postUpdate3(){
         let text={
             user_id:this.state.user_id,
             count:this.state.count,
@@ -72,49 +112,51 @@ class Page2 extends React.Component{
             }
         )
     }
-    handleInputPost3=()=>{
-        this.postInput3()
+    handleUpdatePost3=()=>{
+        this.postUpdate3()
     }
     render(){
+
         return(
             <div id='in_page1'>
                 <div id='in_page2'>
                     <Segment id='in_page3'>
-                        <h3>疾病信息录入</h3>
-                        <h5>用户信息</h5>
+                        <h3>疾病信息修改</h3>
+                        <h5>需要进行修改的用户信息及体检编次</h5>
                         <Input id='user_id'
                                value={this.state.user_id}
                                onChange={this.handleGetUser_idValue}
                                className='page1_input1'
-                               placeholder='体检用户编码'/><br/>
+                               placeholder='体检用户编码'></Input><br/>
                         <Input id='count'
                                value={this.state.count}
                                onChange={this.handleGetCountValue}
                                className='page1_input1'
                                placeholder='体检编次'
-                        /><br/>
-                        <h5>疾病信息</h5>
+                        ></Input><br/>
+                        <h5>需要修改信息</h5>
                         <Input id='d_type'
                                value={this.state.d_type}
                                onChange={this.handleGetD_typeValue}
                                className='page1_input1'
-                               placeholder='疾病类型'/><br/>
+                               placeholder='疾病类型'></Input><br/>
                         <Input id='d_name'
                                value={this.state.d_name}
                                onChange={this.handleGetD_nameValue}
                                className='page1_input1'
-                               placeholder='疾病名称'/><br/>
+                               placeholder='疾病名称'></Input><br/>
                         <div>
-                        <TextArea id='d_desc'
-                                  value={this.state.d_desc}
-                                  onChange={this.handleGetD_descValue}
-                                  className='page_text1'
-                                  placeholder='病情描述'/>
+                            <TextArea id='d_desc'
+                                      value={this.state.d_desc}
+                                      onChange={this.handleGetD_descValue}
+                                      className='page_text1'
+                                      placeholder='病情描述'></TextArea>
                         </div>
                         <Button
-                            primary content='录入'
+                            primary content='修改'
                             style={{marginBottom:'10px'}}
-                            onClick={this.handleInputPost3}
+                            as={Link}
+                            to="/home/navbar3/mess1"
                         />
                     </Segment>
                 </div>
@@ -124,5 +166,4 @@ class Page2 extends React.Component{
     }
 }
 
-export default Page2;
-
+export default Page6_1;
