@@ -60,7 +60,7 @@ class register extends React.Component {
             }
         ).then(res=>res.json()).then(
             data=>{
-                if(data.code==="200"){
+                if(data.CODE==="200"){
                     window.open("/mess3")
                     window.close()
 

@@ -18,6 +18,7 @@ class ListPage1 extends React.Component{
             useData:"",
             key:1,
 
+
         }
     }
 
@@ -26,13 +27,14 @@ class ListPage1 extends React.Component{
         let text={pageNum:this.state.activePage.toString(),
             pageSize:"8"
         }
+
         let sendData=JSON.stringify(text);
         fetch(`http://localhost:8080/management/selectuserlist`,{
                 method:'POST',
-                mode: 'cors',
                 headers: {
                     'Content-Type': 'application/json; charset=utf-8',
                     'Accept': 'application/json',
+                    'Authorization':localStorage.getItem("Authorization"),
                 },
                 body: sendData
             }
@@ -58,7 +60,9 @@ class ListPage1 extends React.Component{
         // window.alert(activePage)
     }
 
-    componentDidMount(){this.postSelect1()}
+    componentDidMount(){this.postSelect1()
+        window.alert(localStorage.getItem("Authorization"))
+    }
     render(){
         const {
             activePage,

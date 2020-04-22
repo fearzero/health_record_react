@@ -22,10 +22,14 @@ class userpage extends React.Component{
             lung_capacity:"5000",
             s_blood_pressure:"88",
             d_blood_pressure:"160",
+            d_type:"",
+            d_desc: "-1",
+            d_name: "-1",
         }
     }
     postSelectInfo1(){
-        let text={user_id:this.state.user_id.toString(),
+        let text={
+            user_id:this.state.user_id,
         }
         let sendData=JSON.stringify(text);
         fetch(`http://localhost:8080/management/selectuser`,{
@@ -34,6 +38,8 @@ class userpage extends React.Component{
                 headers: {
                     'Content-Type': 'application/json; charset=utf-8',
                     'Accept': 'application/json',
+                    'Authorization':localStorage.getItem("Authorization"),
+
                 },
                 body: sendData
             }
@@ -60,7 +66,7 @@ class userpage extends React.Component{
         )
     }
     postSelectInfo2(){
-        let text={user_id:this.state.user_id.toString(),
+        let text={user_id:this.state.user_id,
         }
         let sendData=JSON.stringify(text);
         fetch(`http://localhost:8080/management/selectuserinfo`,{
@@ -69,6 +75,8 @@ class userpage extends React.Component{
                 headers: {
                     'Content-Type': 'application/json; charset=utf-8',
                     'Accept': 'application/json',
+                    'Authorization':localStorage.getItem("Authorization"),
+
                 },
                 body: sendData
             }
@@ -89,10 +97,42 @@ class userpage extends React.Component{
             }
         )
     }
+    postSelectInfo3(){
+        let text={user_id:this.state.user_id,
+        }
+        let sendData=JSON.stringify(text);
+        fetch(`http://localhost:8080/management/selectudisease`,{
+                method:'POST',
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json; charset=utf-8',
+                    'Accept': 'application/json',
+                    'Authorization':localStorage.getItem("Authorization"),
+
+                },
+                body: sendData
+            }
+        ).then(res=>res.json()).then(
+            data=>{
+                if(data.CODE==="200"){
+                    this.setState({
+                        d_type:data.DATA.d_type,
+                        d_desc:data.DATA.d_desc,
+                        d_name:data.DATA.d_name,
+
+                    })
+                }else {
+                    window.alert("信息查询失败")
+                }
+            }
+        )
+    }
 
     componentDidMount(){
         this.postSelectInfo1()
-      this.postSelectInfo2()}
+      this.postSelectInfo2()
+        this.postSelectInfo3()
+    }
 
     render(){
 
@@ -121,7 +161,7 @@ class userpage extends React.Component{
                                     <Segment >建立时间</Segment>
                                 </Segment.Group>
                                 <Segment.Group id="userpage5">
-                                    <Segment >{this.state.user_id}</Segment>
+                                    <Segment>{this.state.user_id}</Segment>
                                     <Segment>{this.state.name}</Segment>
                                     <Segment >{this.state.age}</Segment>
                                     <Segment>{this.state.sex}</Segment>
@@ -164,7 +204,23 @@ class userpage extends React.Component{
                             </Segment.Group>
 
                         </Segment.Group>
-                        <Segment >Bottom</Segment>
+                        <Segment ><h3>疾病历史</h3></Segment>
+                        <Segment.Group >
+                            <Segment.Group horizontal>
+                                <Segment.Group id="userpage4">
+                                    <Segment> 疾病类型</Segment>
+                                    <Segment > 疾病名称</Segment>
+                                    <Segment> 描述</Segment>
+                                </Segment.Group>
+                                <Segment.Group id="userpage5">
+                                    <Segment>{this.state.d_type}</Segment>
+                                    <Segment>{this.state.d_desc}</Segment>
+                                    <Segment>{this.state.d_name}</Segment>
+                                </Segment.Group>
+
+                            </Segment.Group>
+
+                        </Segment.Group>
                     </Segment.Group>
                     </Segment>
                 </div>

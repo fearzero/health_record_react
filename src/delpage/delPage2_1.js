@@ -28,6 +28,8 @@ class delPage2_1 extends React.Component{
                 headers: {
                     'Content-Type': 'application/json; charset=utf-8',
                     'Accept': 'application/json',
+                    'Authorization':localStorage.getItem("Authorization"),
+
                 },
                 body: sendData
 

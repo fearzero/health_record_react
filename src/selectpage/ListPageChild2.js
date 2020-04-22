@@ -34,6 +34,7 @@ class ListPageChild2 extends React.Component{
                 headers: {
                     'Content-Type': 'application/json; charset=utf-8',
                     'Accept': 'application/json',
+                    'Authorization':localStorage.getItem("Authorization"),
                 },
                 body: sendData
             }
@@ -72,19 +73,19 @@ class ListPageChild2 extends React.Component{
                                         <List.Header as={Link}
                                                      to={{
                                                          pathname: `/home/navbar1/userpage`,
-                                                         state:{user_id:list.basic_id}
+                                                         state:{user_id:list.user_id}
                                                      }}
                                         >{list.basic_name}</List.Header>
                                         <List.Description>
                                             just now.
                                         </List.Description>
                                     </List.Content>
-                                    <Label horizontal>用户编码:{list.basic_id}</Label>
-                                    <div style={{float:"right"}}>
+                                    <Label horizontal>用户编码:{list.user_id}</Label>
+                                    <div style={{float:"right"}} id="list_page_div5">
                                         <Label>
                                         <Link to={{
                                         pathname: `/home/navbar2/Page5_1`,
-                                        state:{user_id:list.basic_id}
+                                        state:{user_id:list.user_id}
                                     }}>更新</Link>
                                         </Label>
                                         &nbsp;&nbsp;&nbsp;
@@ -92,7 +93,7 @@ class ListPageChild2 extends React.Component{
                                         <Link
                                             to={{
                                                 pathname: `/home/navbar2/delPage2_1`,
-                                                state:{user_id:list.basic_id}
+                                                state:{user_id:list.user_id}
                                             }}>删除</Link>
                                         </Label>
                                     </div>

@@ -116,7 +116,10 @@ class Home extends React.Component{
                     <Menu.Menu position={'right'}>
                         <Dropdown item icon='user' simple>
                         <Dropdown.Menu>
-                            <Dropdown.Item>用户中心</Dropdown.Item>
+                            <Dropdown.Item
+                            as={Link}
+                            to="/home/navbar4/systemuserpage"
+                            >用户中心</Dropdown.Item>
                             <Dropdown.Item>密码修改</Dropdown.Item>
                             <Dropdown.Item>资料修改</Dropdown.Item>
                         </Dropdown.Menu>

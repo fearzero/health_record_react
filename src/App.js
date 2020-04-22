@@ -17,6 +17,8 @@ import navber from './navbar/navbar'
 import navber1 from './navbar/navbar1'
 import navber2 from './navbar/navbar2'
 import navber3 from './navbar/navbar3'
+import navber4 from './navbar/navbar4'
+
 import webindex from './webindex'
 import welcome from './welcome'
 import selectPage1 from "./selectpage/selectPage1";
@@ -39,6 +41,8 @@ import mess1 from "./message/mess1"
 import mess2 from "./message/mess2"
 import mess3 from "./message/mess3"
 import userpage from "./infopage/userpage"
+import systemuserpage from "./loginuser/systemuserpage"
+
 class App extends React.Component {
     render(){
         return(
@@ -49,6 +53,7 @@ class App extends React.Component {
                     <Route path="/home/navbar1" component={navber1} />
                     <Route path="/home/navbar2" component={navber2} />
                     <Route path="/home/navbar3" component={navber3} />
+                    <Route path="/home/navbar4" component={navber4} />
                     <Route path="/home/navbar/welcome" component={welcome} />
                     <Route path="/home/navbar1/Page1" component={Page1} />
                     <Route path="/home/navbar2/Page2" component={Page2} />
@@ -83,7 +88,7 @@ class App extends React.Component {
                     <Route path="/mess2" component={mess2} />
                     <Route path="/mess3" component={mess3} />
                     <Route path="/home/navbar1/userpage" component={userpage} />
-
+                    <Route path="/home/navbar4/systemuserpage" component={systemuserpage} />
                 </div>
             </Router>
 

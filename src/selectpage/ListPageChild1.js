@@ -3,7 +3,7 @@ import {List} from "semantic-ui-react";
 import {Label} from "semantic-ui-react";
 import {Image} from "semantic-ui-react";
 import {Link} from "react-router-dom";
-
+require("./ListPage.css")
 
 class ListPageChild1 extends React.Component{
     constructor(props) {  //构造函数
@@ -29,10 +29,11 @@ class ListPageChild1 extends React.Component{
         let sendData=JSON.stringify(text);
         fetch(`http://localhost:8080/management/selectuserlist`,{
                 method:'POST',
-                mode: 'cors',
                 headers: {
                     'Content-Type': 'application/json; charset=utf-8',
                     'Accept': 'application/json',
+                    'Authorization':localStorage.getItem("Authorization"),
+
                 },
                 body: sendData
             }
@@ -59,32 +60,33 @@ class ListPageChild1 extends React.Component{
                         this.state.userList.map(function(list,key){
                             return(
                                 <List.Item key={key}>
+
                                     <Label horizontal>{key+1}</Label>
                                     <Image avatar src='https://react.semantic-ui.com/images/avatar/small/rachel.png' />
                                     <List.Content>
                                         <List.Header as={Link}
                                                      to={{
                                                          pathname: `/home/navbar1/userpage`,
-                                                         state:{user_id:list.basic_id}
+                                                         state:{user_id:list.user_id}
                                                      }}
                                         >{list.basic_name}</List.Header>
                                         <List.Description>
                                             just now.
                                         </List.Description>
                                     </List.Content>
-                                    <Label horizontal>{list.basic_id}</Label>
-                                    <div style={{float:"right"}}>
+                                    <Label horizontal>用户编码:{list.user_id}</Label>
+                                    <div style={{float:"right"}} id="list_page_div5">
                                         <Label>
                                     <Link to={{
                                         pathname: `/home/navbar1/Page4_1`,
-                                        state:{user_id:list.basic_id}
+                                        state:{user_id:list.user_id}
                                     }}>更新</Link>
                                         </Label>
                                     &nbsp;&nbsp;&nbsp;
                                         <Label>
                                     <Link to={{
                                         pathname: `/home/navbar1/delPage1_1`,
-                                        state:{user_id:list.basic_id}
+                                        state:{user_id:list.user_id}
                                     }}>删除</Link>
                                         </Label>
                                     </div>

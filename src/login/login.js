@@ -8,6 +8,7 @@ class Login extends React.Component {
         this.state = {
             user:"",
             password:"",
+            token:"",
         }
     }
     handleGetUserValue =(event) =>{
@@ -26,14 +27,21 @@ class Login extends React.Component {
         let sendData=JSON.stringify(text);
         fetch(`http://localhost:8080/system/login`,{
             method:'POST',
+            mode: 'cors',
             headers: {'Content-Type': 'application/json; charset=utf-8'},
             body: sendData
             }
         ).then(res=>res.json()).then(
             data=>{
-                if(data.code==="200"){
+                if(data.CODE==="200"){
+                    this.setState({
+                        token:data.TOKEN,
+                    })
+                    localStorage.setItem("Authorization",this.state.token)
+                    window.alert(localStorage.getItem("Authorization"))
                     window.open("/home/navbar/welcome")
                     window.close()
+
                 }else {
                     window.alert("账户密码错误")
                 }
@@ -70,6 +78,7 @@ class Login extends React.Component {
                                 content='登录'
                                 onClick={this.handleLoginPost}
                                 style={{marginBottom:'10px'}}
+
                         />
 
                     <Link to="/register">
