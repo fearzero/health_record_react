@@ -42,6 +42,9 @@ import mess2 from "./message/mess2"
 import mess3 from "./message/mess3"
 import userpage from "./infopage/userpage"
 import systemuserpage from "./loginuser/systemuserpage"
+import sysupdatepwd from "./loginuser/sysupdatepwd"
+import sysupdateinfo from "./loginuser/sysupdateinfo"
+
 
 class App extends React.Component {
     render(){
@@ -82,6 +85,7 @@ class App extends React.Component {
                     <Route path="/home/navbar1/mess1" component={mess1} />
                     <Route path="/home/navbar2/mess1" component={mess1} />
                     <Route path="/home/navbar3/mess1" component={mess1} />
+                    <Route path="/home/navbar4/mess1" component={mess1} />
                     <Route exact path="/" component={webindex} />
                     <Route path="/register" component={register} />
                     <Route path="/login" component={Login} />
@@ -89,6 +93,8 @@ class App extends React.Component {
                     <Route path="/mess3" component={mess3} />
                     <Route path="/home/navbar1/userpage" component={userpage} />
                     <Route path="/home/navbar4/systemuserpage" component={systemuserpage} />
+                    <Route path="/home/navbar4/sysupdatepwd" component={sysupdatepwd} />
+                    <Route path="/home/navbar4/sysupdateinfo" component={sysupdateinfo} />
                 </div>
             </Router>
 

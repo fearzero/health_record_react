@@ -31,7 +31,6 @@ class userpage extends React.Component{
                     'Accept': 'application/json',
                     'Authorization':localStorage.getItem("Authorization"),
                     'sign':localStorage.getItem("sign"),
-
                 },
                 body: sendData
             }
@@ -71,13 +70,13 @@ class userpage extends React.Component{
                 <div id='userpage1'>
                     <Segment id='userpage1' secondary={true}>
                     <div style={{textAlign:"center"}}>
-                        <Segment id="userpage6"><h1>个人中心</h1></Segment>
+                        <Segment id="systemuserpage1"><h1>个人中心</h1></Segment>
                     </div>
-                    <Segment.Group id="userpage2">
+                    <Segment.Group id="systemuserpage2">
                         <Segment><h3>个人信息详情</h3></Segment>
                         <Segment.Group>
                             <Segment.Group horizontal>
-                                <Segment.Group id="userpage4">
+                                <Segment.Group id="systemuserpage3">
                                     <Segment >用户名</Segment>
                                     <Segment > 真实姓名</Segment>
                                     <Segment >性别</Segment>
@@ -89,7 +88,7 @@ class userpage extends React.Component{
                                     <Segment >用户角色</Segment>
                                     <Segment >账户状态</Segment>
                                 </Segment.Group>
-                                <Segment.Group id="userpage5">
+                                <Segment.Group id="systemuserpage4">
                                     <Segment>{this.state.name}</Segment>
                                     <Segment>{this.state.real_name}</Segment>
                                     <Segment>{this.state.sex}</Segment>

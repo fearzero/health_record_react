@@ -19,7 +19,7 @@ class navbar4 extends React.Component {
                             active={activeItem === '用户个人详情'}
                             onClick={this.handleItemClick}
                             as={Link}
-                            to=""
+                            to="/home/navbar4/systemuserpage"
                         />
                         <Menu.Item
                             id='av1_item1'
@@ -27,7 +27,7 @@ class navbar4 extends React.Component {
                             active={activeItem === '账号密码修改'}
                             onClick={this.handleItemClick}
                             as={Link}
-                            to=""
+                            to="/home/navbar4/sysupdatepwd"
                         />
                         <Menu.Item
                             id='av1_item1'
@@ -35,7 +35,7 @@ class navbar4 extends React.Component {
                             active={activeItem === '个人资料修改'}
                             onClick={this.handleItemClick}
                             as={Link}
-                            to=""
+                            to="/home/navbar4/sysupdateinfo"
                         />
                         <Menu.Item
                             id='av1_item1'
