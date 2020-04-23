@@ -91,6 +91,7 @@ class Page4_1 extends React.Component{
                     'Content-Type': 'application/json; charset=utf-8',
                     'Accept': 'application/json',
                     'Authorization':localStorage.getItem("Authorization"),
+                    'sign':localStorage.getItem("sign"),
 
                 },
                 body: sendData
@@ -119,6 +120,7 @@ class Page4_1 extends React.Component{
                     'Content-Type': 'application/json; charset=utf-8',
                     'Accept': 'application/json',
                     'Authorization':localStorage.getItem("Authorization"),
+                    'sign':localStorage.getItem("sign"),
 
                 },
                 body: sendData
@@ -134,7 +136,7 @@ class Page4_1 extends React.Component{
                         age:data.DATA.basic_age,
                     })
                     this.setState({
-                        sex:data.DATA.identity_id,
+                        sex:data.DATA.basic_sex,
                     })
                     this.setState({
                         iden_id:data.DATA.identity_id,
@@ -146,7 +148,7 @@ class Page4_1 extends React.Component{
                         birthday:data.DATA.basic_birthday,
                     })
                     this.setState({
-                        address:data.DATA.basic_name,
+                        address:data.DATA.basic_address,
                         job:data.DATA.basic_job,
                         is_marriage:data.DATA.is_marriage,
                     })

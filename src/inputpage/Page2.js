@@ -72,6 +72,7 @@ class Page2 extends React.Component{
                     'Content-Type': 'application/json; charset=utf-8',
                     'Accept': 'application/json',
                     'Authorization':localStorage.getItem("Authorization"),
+                    'sign':localStorage.getItem("sign"),
 
                 },
                 body: sendData

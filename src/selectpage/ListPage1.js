@@ -35,6 +35,8 @@ class ListPage1 extends React.Component{
                     'Content-Type': 'application/json; charset=utf-8',
                     'Accept': 'application/json',
                     'Authorization':localStorage.getItem("Authorization"),
+                    'sign':localStorage.getItem("sign"),
+
                 },
                 body: sendData
             }
@@ -61,7 +63,6 @@ class ListPage1 extends React.Component{
     }
 
     componentDidMount(){this.postSelect1()
-        window.alert(localStorage.getItem("Authorization"))
     }
     render(){
         const {

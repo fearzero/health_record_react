@@ -22,7 +22,7 @@ class userpage extends React.Component{
             lung_capacity:"5000",
             s_blood_pressure:"88",
             d_blood_pressure:"160",
-            d_type:"",
+            d_type:"-1",
             d_desc: "-1",
             d_name: "-1",
         }
@@ -39,6 +39,7 @@ class userpage extends React.Component{
                     'Content-Type': 'application/json; charset=utf-8',
                     'Accept': 'application/json',
                     'Authorization':localStorage.getItem("Authorization"),
+                    'sign':localStorage.getItem("sign"),
 
                 },
                 body: sendData
@@ -76,6 +77,7 @@ class userpage extends React.Component{
                     'Content-Type': 'application/json; charset=utf-8',
                     'Accept': 'application/json',
                     'Authorization':localStorage.getItem("Authorization"),
+                    'sign':localStorage.getItem("sign"),
 
                 },
                 body: sendData
@@ -108,6 +110,7 @@ class userpage extends React.Component{
                     'Content-Type': 'application/json; charset=utf-8',
                     'Accept': 'application/json',
                     'Authorization':localStorage.getItem("Authorization"),
+                    'sign':localStorage.getItem("sign"),
 
                 },
                 body: sendData

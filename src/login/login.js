@@ -9,6 +9,7 @@ class Login extends React.Component {
             user:"",
             password:"",
             token:"",
+            sign:"",
         }
     }
     handleGetUserValue =(event) =>{
@@ -36,9 +37,11 @@ class Login extends React.Component {
                 if(data.CODE==="200"){
                     this.setState({
                         token:data.TOKEN,
+                        sign:data.SIGN,
+
                     })
                     localStorage.setItem("Authorization",this.state.token)
-                    window.alert(localStorage.getItem("Authorization"))
+                    localStorage.setItem("sign",this.state.sign)
                     window.open("/home/navbar/welcome")
                     window.close()
 
