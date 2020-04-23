@@ -23,20 +23,13 @@ class navbar1 extends React.Component {
                         />
                         <Menu.Item
                             id='av1_item1'
-                            name='列表查询'
-                            active={activeItem === '列表查询'}
+                            name='查询列表'
+                            active={activeItem === '查询列表'}
                             onClick={this.handleItemClick}
                             as={Link}
                             to="/home/navbar1/ListPage1"
                     />
-                        <Menu.Item
-                            id='av1_item1'
-                            name='精准查询'
-                            active={activeItem === '精准查询'}
-                            onClick={this.handleItemClick}
-                            as={Link}
-                            to="/home/navbar1/a_selectPage1"
-                        />
+
                         <Menu.Item
                             id='av1_item1'
                             name='模糊查询'

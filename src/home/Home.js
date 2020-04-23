@@ -4,6 +4,12 @@ import { Menu, Dropdown } from 'semantic-ui-react';
 import Img from './top1.jpg'
 require('./Home.css')
 class Home extends React.Component{
+    handleOnclick=()=>{
+       localStorage.clear();
+       window.open("/");
+       window.close();
+
+    }
     render(){
 
         return(
@@ -25,11 +31,8 @@ class Home extends React.Component{
                                 <Dropdown.Item
                                     as={Link}
                                     to="/home/navbar1/ListPage1"
-                                >查询</Dropdown.Item>
-                                <Dropdown.Item
-                                    as={Link}
-                                    to="/home/navbar1/ListPage1"
-                                >精准查询</Dropdown.Item>
+                                >查询列表</Dropdown.Item>
+
                                 <Dropdown.Item
                                     as={Link}
                                     to="/home/navbar1/selectPage1"
@@ -53,11 +56,7 @@ class Home extends React.Component{
                             <Dropdown.Item
                                 as={Link}
                                 to="/home/navbar2/ListPage2"
-                            >查询</Dropdown.Item>
-                            <Dropdown.Item
-                                as={Link}
-                                to="/home/navbar2/a_selectPage2"
-                            >精准查询</Dropdown.Item>
+                            >查询列表</Dropdown.Item>
                             <Dropdown.Item
                                 as={Link}
                                 to="/home/navbar2/selectPage2"
@@ -81,11 +80,7 @@ class Home extends React.Component{
                             <Dropdown.Item
                                 as={Link}
                                 to="/home/navbar3/ListPage3"
-                            >查询</Dropdown.Item>
-                            <Dropdown.Item
-                                as={Link}
-                                to="/home/navbar3/a_selectPage3"
-                            >精准查询</Dropdown.Item>
+                            >查询列表</Dropdown.Item>
                             <Dropdown.Item
                                 as={Link}
                                 to="/home/navbar3/selectPage3"
@@ -101,17 +96,7 @@ class Home extends React.Component{
                         </Dropdown.Menu>
                     </Dropdown>
                     <Dropdown item text='系统问题反馈' pointing simple>
-                        <Dropdown.Menu>
-                            <Dropdown.Item
-                                as={Link}
-                                to="/home/navbar2/Page2"
-                            >录入</Dropdown.Item>
-                            <Dropdown.Item>查询</Dropdown.Item>
-                            <Dropdown.Item>精准查询</Dropdown.Item>
-                            <Dropdown.Item>模糊查询</Dropdown.Item>
-                            <Dropdown.Item>修改</Dropdown.Item>
-                            <Dropdown.Item>删除</Dropdown.Item>
-                        </Dropdown.Menu>
+
                     </Dropdown>
                     <Menu.Menu position={'right'}>
                         <Dropdown item icon='user' simple>
@@ -124,7 +109,7 @@ class Home extends React.Component{
                             <Dropdown.Item>资料修改</Dropdown.Item>
                         </Dropdown.Menu>
                         </Dropdown>
-                        <Menu.Item icon='sign-out'>
+                        <Menu.Item icon='sign-out' onClick={this.handleOnclick}>
                         </Menu.Item>
                         <Menu.Item icon='question circle'>
                         </Menu.Item>

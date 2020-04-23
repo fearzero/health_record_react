@@ -64,12 +64,14 @@ class Login extends React.Component {
                 <Segment id='style4' style={{textAlign:'center'}}>
                     <h2>请登录</h2>
                     <Input id='user'
+                           label='用户'
                            value={this.state.user}
                            onChange={this.handleGetUserValue}
                            placeholder='用户名'
                            style={{marginBottom:'10px'}}
                     /><br/>
                     <Input id='password'
+                           label='密码'
                            value={this.state.password}
                            onChange={this.handleGetPasswordValue}
                            type='password'

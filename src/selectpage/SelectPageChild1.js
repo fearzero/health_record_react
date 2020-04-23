@@ -86,26 +86,29 @@ class SelectPageChild1 extends React.Component{
                                         <List.Header as={Link}
                                                      to={{
                                                          pathname: `/home/navbar1/userpage`,
-                                                         state:{user_id:list.basic_id}
+                                                         state:{user_id:list.user_id}
                                                      }}
                                         >{list.basic_name}</List.Header>
                                         <List.Description>
                                             just now.
                                         </List.Description>
                                     </List.Content>
-                                    <Label horizontal>{list.basic_id}</Label>
+                                    <Label horizontal>{list.user_id}</Label>
                                     <div style={{float:"right"}}>
-                                        <Label>
-                                            <Link to={{
+                                        <Label size={"big"} color={"green"} basic={true}>
+
+                                        <Link to={{
                                                 pathname: `/home/navbar1/Page4_1`,
-                                                state:{user_id:list.basic_id}
+                                                state:{user_id:list.user_id}
                                             }}>更新</Link>
                                         </Label>
                                         &nbsp;&nbsp;&nbsp;
-                                        <Label>
-                                            <Link to={{
+                                        <Label size={"big"} color={"red"} basic={true}>
+
+
+                                        <Link to={{
                                                 pathname: `/home/navbar1/delPage1_1`,
-                                                state:{user_id:list.basic_id}
+                                                state:{user_id:list.user_id}
                                             }}>删除</Link>
                                         </Label>
                                     </div>

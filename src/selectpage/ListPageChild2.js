@@ -84,14 +84,16 @@ class ListPageChild2 extends React.Component{
                                     </List.Content>
                                     <Label horizontal>用户编码:{list.user_id}</Label>
                                     <div style={{float:"right"}} id="list_page_div5">
-                                        <Label>
+                                        <Label size={"big"} color={"green"} basic={true}>
+
                                         <Link to={{
                                         pathname: `/home/navbar2/Page5_1`,
                                         state:{user_id:list.user_id}
                                     }}>更新</Link>
                                         </Label>
                                         &nbsp;&nbsp;&nbsp;
-                                        <Label>
+                                        <Label size={"big"} color={"red"} basic={true}>
+
                                         <Link
                                             to={{
                                                 pathname: `/home/navbar2/delPage2_1`,

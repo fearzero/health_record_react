@@ -1,31 +1,31 @@
+
 import React from 'react';
-import {List} from "semantic-ui-react";
+import { List} from "semantic-ui-react";
 import {Label} from "semantic-ui-react";
 import {Image} from "semantic-ui-react";
+import {Link} from "react-router-dom";
 
-import { Link} from 'react-router-dom';
 
-class ListPageChild3 extends React.Component{
+class SelectPageChild1 extends React.Component{
     constructor(props) {  //构造函数
         super(props);
         this.state = {
             activePage: props.activePage,
-            boundaryRange: 1,
-            siblingRange: 1,
-            showEllipsis: true,
-            showFirstAndLastNav: true,
-            showPreviousAndNextNav: true,
-            totalPages: 0,
-            userList : [],
+            basic_name:props.name,
+            basic_age:props.age,
+            basic_sex:props.sex,
+            userList : props.userList,
             useData:"",
-            user_id:0,
-            key:1,
 
         }
     }
     postSelect1(){
-        let text={pageNum:this.state.activePage.toString(),
-            pageSize:"8"
+        let text={
+            basic_name:this.state.name,
+            basic_age:this.state.age,
+            basic_sex:this.state.sex,
+            pageNum:this.state.activePage.toString(),
+            pageSize:"6"
         }
         let sendData=JSON.stringify(text);
         fetch(`http://localhost:8080/management/selectuserlist`,{
@@ -36,6 +36,7 @@ class ListPageChild3 extends React.Component{
                     'Accept': 'application/json',
                     'Authorization':localStorage.getItem("Authorization"),
                     'sign':localStorage.getItem("sign"),
+
 
                 },
                 body: sendData
@@ -53,20 +54,30 @@ class ListPageChild3 extends React.Component{
             }
         )
     }
-    componentDidMount(){this.postSelect1()}
-    pushone(){
-        this.props.history.push({pathname:'/home/navbar1/delPage1' ,query:{user_id:2}})
+    // componentDidMount(){this.postSelect1()}
+    componentWillReceiveProps(nextProps) {
+        this.setState(
+        {
+        userList: nextProps.userList,
+            activePage: nextProps.activePage,
+            // basic_name:nextProps.name,
+            // basic_age:nextProps.age,
+            // basic_sex:nextProps.sex,
+        }
+
+        );
+        // this.postSelect1()
     }
 
-
     render(){
+
         return(
+
             <div id="list_page_div4">
 
-                <List divided verticalAlign='middle' size='massive'>
+                    <List divided verticalAlign='middle' size='massive'>
                     {
                         this.state.userList.map(function(list,key){
-
                             return(
                                 <List.Item key={key}>
                                     <Label horizontal>{key+1}</Label>
@@ -82,8 +93,8 @@ class ListPageChild3 extends React.Component{
                                             just now.
                                         </List.Description>
                                     </List.Content>
-                                    <Label horizontal>用户编码:{list.user_id}</Label>
-                                    <div style={{float:"right"}} id="list_page_div5">
+                                    <Label horizontal>{list.user_id}</Label>
+                                    <div style={{float:"right"}}>
                                         <Label size={"big"} color={"green"} basic={true}>
 
                                         <Link to={{
@@ -95,26 +106,28 @@ class ListPageChild3 extends React.Component{
                                         <Label size={"big"} color={"red"} basic={true}>
 
 
-                                        <Link
-                                                to={{
-                                                    pathname: `/home/navbar3/delPage3_1`,
-                                                    state:{user_id:list.user_id}
-                                                }}>删除</Link>
+                                        <Link to={{
+                                                pathname: `/home/navbar3/delPage3_1`,
+                                                state:{user_id:list.user_id}
+                                            }}>删除</Link>
                                         </Label>
                                     </div>
-
                                 </List.Item>
                             )
                         })
 
                     }
                     <List.Item>
+
                     </List.Item>
 
                 </List>
+
+
             </div>
+
         )
 
     }
 }
-export default ListPageChild3;
+export default SelectPageChild1;

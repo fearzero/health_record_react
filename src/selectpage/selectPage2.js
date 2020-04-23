@@ -1,30 +1,31 @@
 import React from 'react';
-import {Button, Input, Pagination, Segment} from "semantic-ui-react";
+import {Button, Input, Segment} from "semantic-ui-react";
+import SelectPageChild2 from "./SelectPageChild2";
 
 
 class selectPage2 extends React.Component{
     constructor(props) {  //构造函数
         super(props);
         this.state = {
+            user_id:"",
             name:"",
             age:"",
             sex:"",
+            total:0,
+            dataSize:0,
             activePage: 1,
-            boundaryRange: 1,
-            siblingRange: 1,
-            showEllipsis: true,
-            showFirstAndLastNav: true,
-            showPreviousAndNextNav: true,
+
             totalPages: 5,
             userList : [],
             useData:"",
             key:1,
             K:1,
+            loading:"true",
 
         }
     }
-    handleInputChange
-        =(event,{ name, value }) =>{
+
+    handleInputChange =(event,{ name, value }) =>{
         this.setState({
             [name]:event.target.value,
         })}
@@ -32,30 +33,80 @@ class selectPage2 extends React.Component{
         this.setState({key:this.state.key+1})
         // window.alert(activePage)
     }
-    handleGetNameValue = (e, { name }) =>{this.setState({ name });
-        this.setState({key:this.state.key+1})
-        // window.alert(activePage)
+    // handlePaginationChange =(event) =>{
+    //     this.setState({
+    //         activePage:event.target.value,
+    //     })
+    // }
+    handleGetNameValue =(event) =>{
+        this.setState({
+            name:event.target.value,
+        })
     }
-    handleGetAgeValue = (e, { age }) =>{this.setState({ age });
-        this.setState({key:this.state.key+1})
-        // window.alert(activePage)
+    handleGetAgeValue =(event) =>{
+        this.setState({
+            age:event.target.value,
+        })
     }
-    handleGetSexValue = (e, { sex }) =>{this.setState({ sex });
-        this.setState({key:this.state.key+1})
-        // window.alert(activePage)
+    handleGetSexValue =(event) =>{
+        this.setState({
+            sex:event.target.value,
+        })
+    }
+    handleGetUser_idValue =(event) =>{
+        this.setState({
+            user_id:event.target.value,
+        })
     }
     handleSelectChange(){
         this.setState({K:this.state.K+1})
     }
+    postSelect1(){
+        let text={
+            user_id:this.state.user_id,
+            basic_name:this.state.name,
+            basic_age:this.state.age,
+            basic_sex:this.state.sex,
+            pageNum:this.state.activePage.toString(),
+            pageSize:"7"
+        }
+        let sendData=JSON.stringify(text);
+        fetch(`http://localhost:8080/management/selectuserlist`,{
+                method:'POST',
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json; charset=utf-8',
+                    'Accept': 'application/json',
+                    'Authorization':localStorage.getItem("Authorization"),
+                    'sign':localStorage.getItem("sign"),
+
+                },
+                body: sendData
+            }
+        ).then(res=>res.json()).then(
+            data=>{
+                if(data.CODE==="200"){
+                    this.setState({totalPages:data.DATA.pages})
+                    this.setState({userList:data.DATA.list})
+                    this.setState({userData:data.DATA.pageNum})
+                    this.setState({total:data.DATA.total})
+                    this.setState({dataSize:data.DATA.size})
+
+                }else {
+                    window.alert("查询失败")
+                }
+            }
+        )
+    }
+    componentDidMount(){this.postSelect1()}
+    handleOnClick  =(e) =>{
+        this.postSelect1();
+        this.setState({loading:false})
+    }
+    // componentDidUpdate(){this.postSelect1()}
     render(){
         const {
             activePage,
-            boundaryRange,
-            siblingRange,
-            showEllipsis,
-            showFirstAndLastNav,
-            showPreviousAndNextNav,
-            totalPages,
 
         } = this.state
         return(
@@ -73,41 +124,35 @@ class selectPage2 extends React.Component{
                         <Input id='age'
                                onChange={this.handleGetAgeValue}
                                placeholder='年龄'/>&nbsp;&nbsp;&nbsp;
+                        <Input id='user_id'
+                               value={this.state.user_id}
+                               onChange={this.handleGetUser_idValue}
+                               placeholder='体检用户编码'/>&nbsp;&nbsp;&nbsp;
                         <Button primary content='查询'
+
+                                onClick={this.handleOnClick}
                                 style={{marginBottom:'10px' ,marginLeft:'20px'}}/>
                     </Segment>
                 </div>
 
-                <Segment  secondary id="list_page_seg2">
-                    <div id="list_page_div3">
-                        <Pagination
+                <div id="select_page3">
+                    <Segment id="select_page5" secondary={true}>
+                        <SelectPageChild2
+                            key={this.state.key}
+                            userList={this.state.userList}
                             activePage={activePage}
-                            boundaryRange={boundaryRange}
-                            onPageChange={this.handlePaginationChange}
-                            onClick={this.handleChangePage}
-                            size='huge'
-                            siblingRange={siblingRange}
-                            totalPages={totalPages}
-                            // Heads up! All items are powered by shorthands, if you want to hide one of them, just pass `null` as value
-                            ellipsisItem={showEllipsis ? undefined : null}
-                            firstItem={showFirstAndLastNav ? undefined : null}
-                            lastItem={showFirstAndLastNav ? undefined : null}
-                            prevItem={showPreviousAndNextNav ? undefined : null}
-                            nextItem={showPreviousAndNextNav ? undefined : null}
-
+                            name={this.state.name}
+                            age={this.state.age}
+                            sex={this.state.sex}
                         />
-                        <Input
-                            label='Active page'
-                            name='Page'
-                            min={1}
-                            onChange={this.handleInputChange}
-                            type='number'
+                    </Segment>
+                </div>
+                <div id="select_page4">
+                    <Segment id="select_page4">
+                        <h4>已搜索到{this.state.total}条结果，显示前{this.state.dataSize}条</h4>
 
-                            value={activePage}
-                        />
-
-                    </div>
-                </Segment>
+                    </Segment>
+                </div>
             </div>)
 
     }
