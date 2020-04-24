@@ -44,7 +44,7 @@ class Login extends React.Component {
                     localStorage.setItem("sign",this.state.sign)
                     // window.location.href="/home/navbar/welcome"
                     let { history } = this.props
-                    history.push({pathname: "/home/navbar/welcome"})
+                    history.push("/home/navbar/welcome")
 
                 }else {
                     window.alert("账户密码错误")

@@ -79,8 +79,9 @@ class sysupdateinfo extends React.Component {
         ).then(res=>res.json()).then(
             data=>{
                 if(data.CODE==="200"){
-                    window.open("/home/navbar4/mess1")
-                    window.close()
+                     let { history } = this.props
+                    history.push("/home/navbar4/mess1")
+                    
 
                 }else {
                     window.alert("修改失败")

@@ -61,12 +61,14 @@ class register extends React.Component {
         ).then(res=>res.json()).then(
             data=>{
                 if(data.CODE==="200"){
-                    window.open("/mess3")
-                    window.close()
+                     let { history } = this.props
+                    history.push("/mess3")
+                    
 
                 }else {
-                    window.open("/mess2")
-                    window.close()
+                     let { history } = this.props
+                    history.push("/mess2")
+                    
                 }
             }
         )
@@ -76,7 +78,8 @@ class register extends React.Component {
         {this.postRegister()}
         else{
             window.alert("两次输入密码不一致")
-            window.open("/register")
+             let { history } = this.props
+                    history.push("/register")
         }
     }
     render(){

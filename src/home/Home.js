@@ -6,8 +6,9 @@ require('./Home.css')
 class Home extends React.Component{
     handleOnclick=()=>{
        localStorage.clear();
-       window.open("/");
-       window.close();
+        let { history } = this.props
+                    history.push("/");
+       ;
 
     }
     render(){

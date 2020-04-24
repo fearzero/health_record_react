@@ -100,7 +100,8 @@ class Page4 extends React.Component{
         ).then(res=>res.json()).then(
             data=>{
                 if(data.CODE==="200"){
-                    window.open("/home/navbar1/mess1")
+                     let { history } = this.props
+                    history.push("/home/navbar1/mess1")
                     // window.close()
                 }else {
                     window.alert("信息修改失败")

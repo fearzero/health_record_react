@@ -39,7 +39,7 @@ class delPage2_1 extends React.Component{
             data=>{
                 if(data.CODE==="200"){
                     let { history } = this.props
-                    history.push({pathname: "/home/navbar/welcome"})
+                    history.push({pathname: "/home/navbar2/mess1"})
                 }else {
                     window.alert("信息删除失败")
                 }
