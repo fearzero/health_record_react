@@ -62,7 +62,7 @@ class Page5_1 extends React.Component{
             d_blood_pressure:this.state.d_blood_pressure
         }
         let sendData=JSON.stringify(text);
-        fetch(`http://localhost:8080/management/updatetuserinfo`,{
+        fetch(`http://localhost:8080/hd/management/updatetuserinfo`,{
 
                 method:'POST',
 
@@ -94,7 +94,7 @@ class Page5_1 extends React.Component{
             user_id:this.state.user_id,
         }
         let sendData=JSON.stringify(text);
-        fetch(`http://localhost:8080/management/selectuserinfo`,{
+        fetch(`http://localhost:8080/hd/management/selectuserinfo`,{
                 method:'POST',
                 mode: 'cors',
                 headers: {

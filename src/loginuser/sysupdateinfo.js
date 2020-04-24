@@ -66,7 +66,7 @@ class sysupdateinfo extends React.Component {
             email:this.state.email,
         }
         let sendData=JSON.stringify(text);
-        fetch(`http://localhost:8080/systemUser/updateSysUserInfo`,{
+        fetch(`http://localhost:8080/hd/systemUser/updateSysUserInfo`,{
                 method:'POST',
                 headers: {
                     'Content-Type': 'application/json; charset=utf-8',

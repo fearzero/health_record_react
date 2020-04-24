@@ -17,7 +17,7 @@ class delPage1_1 extends React.Component{
             user_id:this.state.user_id
         }
         let sendData=JSON.stringify(text);
-        fetch(`http://localhost:8080/management/deleteuser`,{
+        fetch(`http://localhost:8080/hd/management/deleteuser`,{
 
                 method:'POST',
 

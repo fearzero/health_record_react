@@ -48,7 +48,7 @@ class Page6 extends React.Component{
             d_desc:this.state.d_desc
         }
         let sendData=JSON.stringify(text);
-        fetch(`http://localhost:8080/management/upadtedisease`,{
+        fetch(`http://localhost:8080/hd/management/upadtedisease`,{
 
                 method:'POST',
 

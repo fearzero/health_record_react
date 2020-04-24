@@ -53,7 +53,7 @@ class register extends React.Component {
     postRegister(){
         let text={user_name:this.state.user,user_password:this.state.password}
         let sendData=JSON.stringify(text);
-        fetch(`http://localhost:8080/system/register`,{
+        fetch(`http://localhost:8080/hd/system/register`,{
                 method:'POST',
                 headers: {'Content-Type': 'application/json; charset=utf-8'},
                 body: sendData

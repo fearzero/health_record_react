@@ -23,7 +23,7 @@ class userpage extends React.Component{
         let text={
         }
         let sendData=JSON.stringify(text);
-        fetch(`http://localhost:8080/systemUser/selectSysUserInfo`,{
+        fetch(`http://localhost:8080/hd/systemUser/selectSysUserInfo`,{
                 method:'POST',
                 mode: 'cors',
                 headers: {

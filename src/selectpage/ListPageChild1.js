@@ -27,7 +27,7 @@ class ListPageChild1 extends React.Component{
             pageSize:"10"
         }
         let sendData=JSON.stringify(text);
-        fetch(`http://localhost:8080/management/selectuserlist`,{
+        fetch(`http://localhost:8080/hd/management/selectuserlist`,{
                 method:'POST',
                 headers: {
                     'Content-Type': 'application/json; charset=utf-8',

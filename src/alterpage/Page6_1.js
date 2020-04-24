@@ -45,7 +45,7 @@ class Page6_1 extends React.Component{
             user_id:this.state.user_id,
         }
         let sendData=JSON.stringify(text);
-        fetch(`http://localhost:8080/management/selectudisease`,{
+        fetch(`http://localhost:8080/hd/management/selectudisease`,{
                 method:'POST',
                 mode: 'cors',
                 headers: {
@@ -91,7 +91,7 @@ class Page6_1 extends React.Component{
             d_desc:this.state.d_desc
         }
         let sendData=JSON.stringify(text);
-        fetch(`http://localhost:8080/management/upadtedisease`,{
+        fetch(`http://localhost:8080/hd/management/upadtedisease`,{
 
                 method:'POST',
 

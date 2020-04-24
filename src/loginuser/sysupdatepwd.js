@@ -29,7 +29,7 @@ class sysupdatepwd extends React.Component {
             password2:this.state.password2
         }
         let sendData=JSON.stringify(text);
-        fetch(`http://localhost:8080/systemUser/updatePWD`,{
+        fetch(`http://localhost:8080/hd/systemUser/updatePWD`,{
                 method:'POST',
                 headers: {
                     'Content-Type': 'application/json; charset=utf-8',

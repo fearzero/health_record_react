@@ -27,7 +27,7 @@ class ListPage3 extends React.Component{
             pageSize:"10"
         }
         let sendData=JSON.stringify(text);
-        fetch(`http://localhost:8080/management/selectuserlist`,{
+        fetch(`http://localhost:8080/hd/management/selectuserlist`,{
                 method:'POST',
                 mode: 'cors',
                 headers: {

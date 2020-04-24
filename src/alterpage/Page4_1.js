@@ -81,7 +81,7 @@ class Page4_1 extends React.Component{
             is_marriage:this.state.is_marriage,
         }
         let sendData=JSON.stringify(text);
-        fetch(`http://localhost:8080/management/upadtauser`,{
+        fetch(`http://localhost:8080/hd/management/upadtauser`,{
 
                 method:'POST',
 
@@ -113,7 +113,7 @@ class Page4_1 extends React.Component{
             user_id:this.state.user_id,
         }
         let sendData=JSON.stringify(text);
-        fetch(`http://localhost:8080/management/selectuser`,{
+        fetch(`http://localhost:8080/hd/management/selectuser`,{
                 method:'POST',
                 mode: 'cors',
                 headers: {

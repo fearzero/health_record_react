@@ -28,7 +28,7 @@ class loginlogs extends React.Component {
         }
 
         let sendData=JSON.stringify(text);
-        fetch(`http://localhost:8080/systemUser/selectLogs`,{
+        fetch(`http://localhost:8080/hd/systemUser/selectLogs`,{
                 method:'POST',
                 headers: {
                     'Content-Type': 'application/json; charset=utf-8',

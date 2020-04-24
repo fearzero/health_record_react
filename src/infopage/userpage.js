@@ -32,7 +32,7 @@ class userpage extends React.Component{
             user_id:this.state.user_id,
         }
         let sendData=JSON.stringify(text);
-        fetch(`http://localhost:8080/management/selectuser`,{
+        fetch(`http://localhost:8080/hd/management/selectuser`,{
                 method:'POST',
                 mode: 'cors',
                 headers: {
@@ -70,7 +70,7 @@ class userpage extends React.Component{
         let text={user_id:this.state.user_id,
         }
         let sendData=JSON.stringify(text);
-        fetch(`http://localhost:8080/management/selectuserinfo`,{
+        fetch(`http://localhost:8080/hd/management/selectuserinfo`,{
                 method:'POST',
                 mode: 'cors',
                 headers: {
@@ -103,7 +103,7 @@ class userpage extends React.Component{
         let text={user_id:this.state.user_id,
         }
         let sendData=JSON.stringify(text);
-        fetch(`http://localhost:8080/management/selectudisease`,{
+        fetch(`http://localhost:8080/hd/management/selectudisease`,{
                 method:'POST',
                 mode: 'cors',
                 headers: {

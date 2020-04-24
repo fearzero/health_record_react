@@ -17,7 +17,7 @@ class delPage1 extends React.Component{
             user_id:this.state.user_id
         }
         let sendData=JSON.stringify(text);
-        fetch(`http://localhost:8080/management/deleteuser`,{
+        fetch(`http://localhost:8080/hd/management/deleteuser`,{
 
                 method:'POST',
 
@@ -36,7 +36,8 @@ class delPage1 extends React.Component{
         ).then(res=>res.json()).then(
             data=>{
                 if(data.CODE==="200"){
-                    window.open("/home/navbar1/mess1")
+                     let { history } = this.props
+                    history.push("/home/navbar1/mess1")
                     window.close()
                 }else {
                     window.alert("信息删除失败")

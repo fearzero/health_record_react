@@ -26,7 +26,7 @@ class Login extends React.Component {
      postLogin(){
         let text={user_name:this.state.user,user_password:this.state.password}
         let sendData=JSON.stringify(text);
-        fetch(`http://localhost:8080/system/login`,{
+        fetch(`http://localhost:8080/hd/system/login`,{
             method:'POST',
             mode: 'cors',
             headers: {'Content-Type': 'application/json; charset=utf-8'},
@@ -42,8 +42,9 @@ class Login extends React.Component {
                     })
                     localStorage.setItem("Authorization",this.state.token)
                     localStorage.setItem("sign",this.state.sign)
-                    window.open("/home/navbar/welcome")
-                    window.close()
+                    // window.location.href="/home/navbar/welcome"
+                    let { history } = this.props
+                    history.push({pathname: "/home/navbar/welcome"})
 
                 }else {
                     window.alert("账户密码错误")
