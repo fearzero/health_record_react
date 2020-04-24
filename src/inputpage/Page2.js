@@ -62,7 +62,7 @@ class Page2 extends React.Component{
             d_blood_pressure:this.state.d_blood_pressure
         }
         let sendData=JSON.stringify(text);
-        fetch(`http://localhost:8080/management/insertuserinfo`,{
+        fetch(`http://localhost:8080/management/updatetuserinfo`,{
 
                 method:'POST',
 

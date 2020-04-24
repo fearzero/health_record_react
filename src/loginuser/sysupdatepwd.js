@@ -61,7 +61,7 @@ class sysupdatepwd extends React.Component {
 
             <div id='in_page1'>
                 <div id='userpage1'>
-                    <Segment id='userpage1' secondary={true}>
+                    <Segment id="systemuserpage7" secondary={true}>
                         <div style={{textAlign:"center"}}>
                             <Segment id="systemuserpage1"><h1>个人中心</h1></Segment>
                         </div>

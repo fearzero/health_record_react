@@ -75,7 +75,7 @@ class SelectPageChild1 extends React.Component{
 
             <div id="list_page_div4">
 
-                    <List divided verticalAlign='middle' size='massive'>
+                    <List divided verticalAlign='middle' size='massive'  id="list1">
                     {
                         this.state.userList.map(function(list,key){
                             return(

@@ -38,7 +38,7 @@ class delPage2_1 extends React.Component{
         ).then(res=>res.json()).then(
             data=>{
                 if(data.CODE==="200"){
-                    window.open("/home/navbar1/mess1")
+                    window.open("/home/navbar2/mess1")
                     window.close()
                 }else {
                     window.alert("信息删除失败")
@@ -68,9 +68,9 @@ class delPage2_1 extends React.Component{
                                className='page1_input1'
                                placeholder='体检用户编码'/><br/>
                         <Button
-                            primary content='录入'
+                            primary content='删除'
                             style={{marginBottom:'10px'}}
-                            onClick={this.handleDeletePost1}
+                            onClick={this.handleDeletePost2}
                             // as={Link}
                             // to="/home/navbar2/mess1"
                         />

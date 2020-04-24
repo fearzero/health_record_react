@@ -25,7 +25,7 @@ class ListPageChild2 extends React.Component{
     }
     postSelect1(){
         let text={pageNum:this.state.activePage.toString(),
-            pageSize:"8"
+            pageSize:"10"
         }
         let sendData=JSON.stringify(text);
         fetch(`http://localhost:8080/management/selectuserlist`,{
@@ -63,7 +63,7 @@ class ListPageChild2 extends React.Component{
         return(
             <div id="list_page_div4">
 
-                <List divided verticalAlign='middle' size='massive'>
+                <List divided verticalAlign='middle' size='massive'  id="list1">
                     {
                         this.state.userList.map(function(list,key){
 

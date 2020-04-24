@@ -24,7 +24,7 @@ class ListPage3 extends React.Component{
 
     postSelect1(){
         let text={pageNum:this.state.activePage.toString(),
-            pageSize:"8"
+            pageSize:"10"
         }
         let sendData=JSON.stringify(text);
         fetch(`http://localhost:8080/management/selectuserlist`,{

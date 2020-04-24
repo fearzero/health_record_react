@@ -3,25 +3,29 @@
 /*    height: 200px;*/
 /*    float: left;*/
 /*}*/
-/*#select_page2{*/
-/*    width:1280px;*/
-/*    height: 200px;*/
-/*    text-align: center;*/
+#select_page2{
+    margin-top: 10px;
+    width:1000px;
+    height: 180px;
+    text-align: center;
+    margin-left: 150px;
 
-/*}*/
+}
 #select_page3{
     margin-top: 10px;
     width:1280px;
     height: 500px;
 }
 #select_page4{
-    margin-top: 10px;
-    width:1280px;
-    height: 100px;
+    margin-left: 137.5px;
+    margin-top: 30px;
+    width:740px;
+    height: 70px;
 }
 #select_page5{
-
-    width:1280px;
+    margin-left: 275px;
+    margin-top: 25px;
+    width:740px;
     height: 500px;
 }
 /*.select_input1{*/

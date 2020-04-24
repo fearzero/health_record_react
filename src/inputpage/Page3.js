@@ -48,18 +48,14 @@ class Page2 extends React.Component{
             d_desc:this.state.d_desc
         }
         let sendData=JSON.stringify(text);
-        fetch(`http://localhost:8080/management/insertdisease`,{
-
+        fetch(`http://localhost:8080/management/upadtedisease`,{
                 method:'POST',
-
                 mode: 'cors',
-
                 headers: {
                     'Content-Type': 'application/json; charset=utf-8',
                     'Accept': 'application/json',
                     'Authorization':localStorage.getItem("Authorization"),
                     'sign':localStorage.getItem("sign"),
-
                 },
                 body: sendData
 

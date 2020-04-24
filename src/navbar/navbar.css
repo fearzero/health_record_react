@@ -1,7 +1,9 @@
 #nav1_style1{
     width: 208px;
-    height: 600px;
+    height: 830px;
     float: left;
+    background-image: url("bar.jpg");
+    background-size: 200px,830px;
 }
 nav1_style2{
     width: 208px;
@@ -23,12 +25,12 @@ nav1_style2{
 #nav1_img1{
     width: 200px;
     height: 328.6px;
-    margin:10px;
+
 
 }
 #nav1_img2{
     width: 200px;
     height: 300px;
-    margin:10px;
+
 
 }

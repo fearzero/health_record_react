@@ -105,8 +105,14 @@ class Home extends React.Component{
                             as={Link}
                             to="/home/navbar4/systemuserpage"
                             >用户中心</Dropdown.Item>
-                            <Dropdown.Item>密码修改</Dropdown.Item>
-                            <Dropdown.Item>资料修改</Dropdown.Item>
+                            <Dropdown.Item
+                                as={Link}
+                                to="/home/navbar4/sysupdatepwd"
+                            >密码修改</Dropdown.Item>
+                            <Dropdown.Item
+                                as={Link}
+                                to="/home/navbar4/sysupdateinfo"
+                            >资料修改</Dropdown.Item>
                         </Dropdown.Menu>
                         </Dropdown>
                         <Menu.Item icon='sign-out' onClick={this.handleOnclick}>

@@ -43,7 +43,7 @@ class navbar4 extends React.Component {
                             active={activeItem === '登录记录查询'}
                             onClick={this.handleItemClick}
                             as={Link}
-                            to=""
+                            to="/home/navbar4/loginlogs"
                         />
                     </Menu>
                     <div id='nav1_style2'>

@@ -24,7 +24,7 @@ class ListPageChild1 extends React.Component{
     postSelect1(){
         let text={
             pageNum:this.state.activePage.toString(),
-            pageSize:"8"
+            pageSize:"10"
         }
         let sendData=JSON.stringify(text);
         fetch(`http://localhost:8080/management/selectuserlist`,{
@@ -61,7 +61,7 @@ class ListPageChild1 extends React.Component{
                     {
                         this.state.userList.map(function(list,key){
                             return(
-                                <List.Item key={key}>
+                                <List.Item key={key}  id="list1">
 
                                     <Label horizontal>{key+1}</Label>
                                     <Image avatar src='https://react.semantic-ui.com/images/avatar/small/rachel.png' />
@@ -107,4 +107,4 @@ class ListPageChild1 extends React.Component{
 
     }
 }
-export default ListPageChild1;
+export default ListPageChild1

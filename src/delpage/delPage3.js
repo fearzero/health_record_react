@@ -1,6 +1,5 @@
 import React from 'react';
 import {Button, Input, Segment} from "semantic-ui-react";
-import {Link} from "react-router-dom";
 class delPage3 extends React.Component{
     constructor(props) {  //构造函数
         super(props);
@@ -38,7 +37,7 @@ class delPage3 extends React.Component{
         ).then(res=>res.json()).then(
             data=>{
                 if(data.CODE==="200"){
-                    window.open("/home/navbar1/mess1")
+                    window.open("/home/navbar3/mess1")
                     window.close()
                 }else {
                     window.alert("信息删除失败")
@@ -60,8 +59,7 @@ class delPage3 extends React.Component{
                         <Button
                             primary content='删除'
                             style={{marginBottom:'10px'}}
-                            as={Link}
-                            to="/home/navbar3/mess1"
+                            onClick={this.handleDeletePost3}
                         />
                     </Segment>
                 </div>

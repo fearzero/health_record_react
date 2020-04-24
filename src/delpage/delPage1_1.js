@@ -61,7 +61,7 @@ class delPage1_1 extends React.Component{
                                className='page1_input1'
                                placeholder='体检用户编码'/><br/>
                         <Button
-                            primary content='录入'
+                            primary content='删除'
                             style={{marginBottom:'10px'}}
                             onClick={this.handleDeletePost1}
                             // as={Link}

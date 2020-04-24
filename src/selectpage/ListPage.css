@@ -1,15 +1,15 @@
 #list_page_seg1{
-    width:1250px;
-    height: 600px;
+    width:740px;
+    height: 680px;
     text-align: center;
-    margin-left: 15px;
-
+    margin-left: 275px;
+    margin-top: 15px;
 }
 #list_page_seg2{
-    width:1250px;
-    height: 100px;
-    margin-top: 10px;
-    margin-left: 15px;
+    width:740px;
+    height: 80px;
+    margin-top: 45px;
+    margin-left: 275px;
 }
 #list_page_h1{
     width:1250px;
@@ -25,11 +25,11 @@
 #list_page_div2{
     /*background-color: #19b82b;*/
     width:1250px;
-    height: 600px;
+    height: 650px;
 }
 #list_page_div3{
     /*background-color: #54ffff;*/
-    width:1250px;
+    width:740px;
     height: 100px;
 }
 #list_page_div4{
@@ -39,4 +39,7 @@
 }
 #list_page_div5{
   margin-right: 50px;
+}
+#list1{
+    width:700px;
 }
